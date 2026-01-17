@@ -1,0 +1,12 @@
+{
+  "Home": {
+    "title": "PKT Swiss Kart Team",
+    "subtitle": "Passion, growth and competition."
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "driversRaces": "Drivers & Races",
+    "contact": "Contact"
+  }
+}
