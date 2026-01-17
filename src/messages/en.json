@@ -8,5 +8,11 @@
     "services": "Services",
     "driversRaces": "Drivers & Races",
     "contact": "Contact"
-  }
+  },
+  "Footer": {
+  "email": "Email",
+  "partners": "Partners",
+  "partnersHint": "Sponsors and partners (clickable logos or links)."
+}
+
 }

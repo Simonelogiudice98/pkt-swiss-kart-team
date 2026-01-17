@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import Button from "@mui/material/Button";
 import { locales, type Locale } from "@/i18n";
 
 function isLocale(x: string): x is Locale {
@@ -13,17 +14,20 @@ export default function LocaleSwitcher() {
 
   const segments = pathname.split("/").filter(Boolean);
   const first = segments[0] ?? "";
-
   if (!isLocale(first)) return null;
 
-  const currentLocale: Locale = first;
-  const nextLocale: Locale = currentLocale === "it" ? "en" : "it";
-
+  const nextLocale: Locale = first === "it" ? "en" : "it";
   const nextPath = "/" + [nextLocale, ...segments.slice(1)].join("/");
 
   return (
-    <button type="button" onClick={() => router.push(nextPath)}>
+    <Button
+      size="small"
+      variant="outlined"
+      color="secondary"
+      onClick={() => router.push(nextPath)}
+      sx={{ fontWeight: 900, borderRadius: 3, minWidth: 48 }}
+    >
       {nextLocale.toUpperCase()}
-    </button>
+    </Button>
   );
 }

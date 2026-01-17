@@ -8,5 +8,11 @@
     "services": "Servizi",
     "driversRaces": "Piloti & Gare",
     "contact": "Contatti"
+  },
+  "Footer": {
+  "email": "Email",
+  "partners": "Partner",
+  "partnersHint": "Sponsor e partner (loghi o link cliccabili)."
   }
+
 }

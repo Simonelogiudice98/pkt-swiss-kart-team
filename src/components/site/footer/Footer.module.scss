@@ -1,0 +1,89 @@
+.footer {
+  margin-top: 64px;
+  padding: 42px 0 18px;
+  background: rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+
+.block {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.brand {
+  font-weight: 950;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.line { color: rgba(255,255,255,0.88); margin: 6px 0; }
+
+.link {
+  color: rgba(255,210,0,0.95);
+  text-decoration: none;
+}
+.link:hover { text-decoration: underline; }
+
+.muted { color: rgba(255,255,255,0.72); }
+
+.socialRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.whatsapp {
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(37, 211, 102, 0.18);
+  border: 1px solid rgba(37, 211, 102, 0.28);
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.partnerList {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px 0;
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+}
+@media (min-width: 900px) {
+  .inner { grid-template-columns: 1.2fr 0.8fr; }
+}
