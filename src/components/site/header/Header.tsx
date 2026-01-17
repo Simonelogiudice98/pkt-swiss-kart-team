@@ -2,27 +2,28 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Slide from "@mui/material/Slide";
+import type { TransitionProps } from "@mui/material/transitions";
+import { useRouter } from "next/navigation";
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import Divider from "@mui/material/Divider";
-
+import Dialog from "@mui/material/Dialog";
+import Typography from "@mui/material/Typography";
+import ButtonBase from "@mui/material/ButtonBase";
+import Image from "next/image";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MenuIcon from "@mui/icons-material/Menu";
-import MusicNoteIcon from "@mui/icons-material/MusicNote"; // “TikTok-ish” (oppure metti un svg tuo)
-
+import CloseIcon from "@mui/icons-material/Close";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import * as React from "react";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { locales, type Locale } from "@/i18n";
 
@@ -30,25 +31,29 @@ function isLocale(x: string): x is Locale {
   return (locales as readonly string[]).includes(x);
 }
 
-export default function Header() {
+type SocialLinks = {
+  instagram?: string;
+  facebook?: string;
+  tiktok?: string;
+  whatsapp?: string;
+};
+
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & { children: React.ReactElement },
+  ref: React.Ref<unknown>,
+) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
+
+export default function Header({}: { socials?: SocialLinks }) {
   const t = useTranslations("Nav");
   const pathname = usePathname();
-
+  const router = useRouter();
   const segments = pathname.split("/").filter(Boolean);
   const first = segments[0] ?? "";
   const locale: Locale = isLocale(first) ? first : "it";
 
-  const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
-
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const links = useMemo(
     () => [
@@ -57,108 +62,263 @@ export default function Header() {
       { href: `/${locale}/piloti-gare`, label: t("driversRaces") },
       { href: `/${locale}/contatti`, label: t("contact") },
     ],
-    [locale, t]
+    [locale, t],
   );
 
-  const transparent = isHome && !scrolled && !open;
+  const currentPath = pathname.replace(/\/$/, "");
 
   return (
     <>
       <AppBar
         position="sticky"
-        elevation={transparent ? 0 : 6}
+        elevation={0}
         sx={{
-          backgroundColor: transparent ? "transparent" : "background.paper",
-          backdropFilter: transparent ? "none" : "blur(10px)",
-          borderBottom: transparent ? "1px solid transparent" : "1px solid rgba(255,255,255,0.08)",
-          transition: "all 180ms ease",
+          background: "rgba(10,12,16,0.40)",
+          backdropFilter: "blur(10px)",
+          borderBottom: "1px solid rgba(255,210,0,0.20)",
         }}
       >
-        <Toolbar sx={{ maxWidth: 1100, width: "100%", mx: "auto", px: 2, gap: 1 }}>
-          <Link href={`/${locale}`} style={{ display: "inline-flex", alignItems: "center" }}>
+        <Toolbar sx={{ maxWidth: 1200, width: "100%", mx: "auto", px: 2 }}>
+          <Link
+            href={`/${locale}`}
+            style={{ display: "inline-flex", alignItems: "center" }}
+          >
             <Image
-            src="/images/pkt_logo.svg"
-            alt="PKT Swiss Kart Team"
-            width={180}
-            height={60}
-            priority
-          />
+              src="/images/pkt_logo.svg"
+              alt="PKT Swiss Kart Team"
+              width={180}
+              height={60}
+              priority
+              style={{ filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))" }}
+            />
           </Link>
 
           <Box sx={{ flex: 1 }} />
 
           <Stack direction="row" spacing={1} alignItems="center">
-            <IconButton aria-label="Instagram" color="inherit" href="#" target="_blank">
+            <IconButton
+              aria-label="Instagram"
+              color="inherit"
+              href=""
+              target="_blank"
+            >
               <InstagramIcon />
             </IconButton>
-            <IconButton aria-label="Facebook" color="inherit" href="#" target="_blank">
+            <IconButton
+              aria-label="Facebook"
+              color="inherit"
+              href=""
+              target="_blank"
+            >
               <FacebookIcon />
             </IconButton>
-            <IconButton aria-label="TikTok" color="inherit" href="#" target="_blank">
+            <IconButton
+              aria-label="TikTok"
+              color="inherit"
+              href=""
+              target="_blank"
+            >
               <MusicNoteIcon />
             </IconButton>
-            <IconButton aria-label="WhatsApp" color="inherit" href="#" target="_blank">
+            <IconButton
+              aria-label="WhatsApp"
+              color="inherit"
+              href=""
+              target="_blank"
+            >
               <WhatsAppIcon />
             </IconButton>
 
-            {/* il tuo switch: se vuoi lo stile MUI, possiamo trasformarlo in Button */}
             <LocaleSwitcher />
 
-            <IconButton aria-label="Menu" color="inherit" onClick={() => setOpen(true)}>
+            <IconButton
+              aria-label="Menu"
+              color="inherit"
+              onClick={() => setOpen(true)}
+            >
               <MenuIcon />
             </IconButton>
           </Stack>
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <Box sx={{ width: 320, p: 2 }}>
-          <Box sx={{ fontWeight: 900, letterSpacing: 1, mb: 1 }}>Menu</Box>
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={() => setOpen(false)}
+        TransitionComponent={Transition}
+        PaperProps={{
+          sx: {
+            background: "transparent",
+          },
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            height: "100%",
+            overflow: "hidden",
+            background:
+              "radial-gradient(700px 260px at 120px 70px, rgba(255,255,255,0.18), transparent 60%)," +
+              "radial-gradient(1000px 500px at 20% 0%, rgba(11,42,111,0.60), rgba(10,12,16,0.90))",
 
-          <List sx={{ display: "grid", gap: 1 }}>
-            {links.map((x) => (
-              <ListItemButton
-                key={x.href}
-                component={Link}
-                href={x.href}
-                onClick={() => setOpen(false)}
-                sx={{
-                  borderRadius: 2,
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: "rgba(255,255,255,0.06)",
-                  "&:hover": { background: "rgba(255,210,0,0.12)" },
-                }}
+            backdropFilter: "blur(10px)",
+          }}
+        >
+          <Box
+            sx={{
+              position: "absolute",
+              right: 0,
+              top: 0,
+              width: 5,
+              height: "100%",
+              background:
+                "linear-gradient(180deg, rgba(255,210,0,1), rgba(229,57,53,1))",
+              opacity: 0.9,
+            }}
+          />
+
+          <Box
+            sx={{
+              position: "absolute",
+              inset: 0,
+              pointerEvents: "none",
+              opacity: 0.06,
+              backgroundImage:
+                'url(\'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="120" height="120" filter="url(%23n)" opacity=".6"/></svg>\')',
+            }}
+          />
+
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              px: 2,
+              py: 1.5,
+            }}
+          >
+            <Link
+              href={`/${locale}`}
+              onClick={() => setOpen(false)}
+              style={{ display: "inline-flex" }}
+            >
+              <Image
+                src="/images/pkt_logo.svg"
+                alt="PKT Swiss Kart Team"
+                width={180}
+                height={60}
+                priority
+                style={{ filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))" }}
+              />
+            </Link>
+
+            <Stack direction="row" spacing={1} alignItems="center">
+              <IconButton
+                aria-label="Instagram"
+                color="inherit"
+                href=""
+                target="_blank"
               >
-                <ListItemText primary={x.label} />
-              </ListItemButton>
-            ))}
-          </List>
+                <InstagramIcon />
+              </IconButton>
+              <IconButton
+                aria-label="Facebook"
+                color="inherit"
+                href=""
+                target="_blank"
+              >
+                <FacebookIcon />
+              </IconButton>
+              <IconButton
+                aria-label="TikTok"
+                color="inherit"
+                href=""
+                target="_blank"
+              >
+                <MusicNoteIcon />
+              </IconButton>
 
-          <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.10)" }} />
+              <IconButton
+                aria-label="Close menu"
+                color="inherit"
+                onClick={() => setOpen(false)}
+              >
+                <CloseIcon />
+              </IconButton>
+            </Stack>
+          </Box>
 
-          <Box sx={{ fontSize: 13, opacity: 0.8, mb: 1 }}>Social</Box>
-          <Stack direction="row" spacing={1}>
-            <IconButton aria-label="Instagram" color="inherit" href="#" target="_blank">
-              <InstagramIcon />
-            </IconButton>
-            <IconButton aria-label="Facebook" color="inherit" href="#" target="_blank">
-              <FacebookIcon />
-            </IconButton>
-            <IconButton aria-label="TikTok" color="inherit" href="#" target="_blank">
-              <MusicNoteIcon />
-            </IconButton>
-            <IconButton aria-label="WhatsApp" color="inherit" href="#" target="_blank">
-              <WhatsAppIcon />
-            </IconButton>
-          </Stack>
+          <Box
+            sx={{
+              height: "calc(100% - 72px)",
+              display: "grid",
+              placeItems: "center",
+              px: 2,
+            }}
+          >
+            <Stack spacing={1.0} sx={{ width: "min(520px, 92vw)" }}>
+              {links.map((x) => {
+                const active = currentPath === x.href.replace(/\/$/, "");
 
-          <Box sx={{ mt: 2 }}>
-            <Button variant="contained" color="secondary" fullWidth onClick={() => setOpen(false)}>
-              Chiudi
-            </Button>
+                return (
+                  <ButtonBase
+                    key={x.href}
+                    onClick={() => {
+                      setOpen(false);
+                      router.push(x.href);
+                    }}
+                    sx={{
+                      width: "100%",
+                      textAlign: "center",
+                      py: { xs: 1.0, sm: 1.15 },
+                      borderRadius: 2,
+                      transition: "transform 160ms ease",
+                      "&:hover": { transform: "translateY(-1px)" },
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontWeight: 900,
+                        letterSpacing: 3,
+                        textTransform: "uppercase",
+                        fontSize: { xs: 18, sm: 22 },
+                        color: active
+                          ? "secondary.main"
+                          : "rgba(255,255,255,0.92)",
+                        display: "inline-block",
+                        position: "relative",
+                        pb: 0.5,
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          left: "50%",
+                          bottom: 0,
+                          width: active ? "52%" : "0%",
+                          height: 2,
+                          background:
+                            "linear-gradient(90deg, #ffd200, #e53935)",
+                          transform: "translateX(-50%)",
+                          transition: "width 160ms ease",
+                        },
+                        "&:hover::after": {
+                          width: "52%",
+                        },
+                      }}
+                    >
+                      {x.label}
+                    </Typography>
+                  </ButtonBase>
+                );
+              })}
+
+              <Box sx={{ pt: 2, display: "flex", justifyContent: "center" }}>
+                <LocaleSwitcher />
+              </Box>
+            </Stack>
           </Box>
         </Box>
-      </Drawer>
+      </Dialog>
     </>
   );
 }
