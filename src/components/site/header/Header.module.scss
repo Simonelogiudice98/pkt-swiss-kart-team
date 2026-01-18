@@ -47,7 +47,7 @@
 .socialBtn:hover { transform: translateY(-1px); background: rgba(255, 210, 0, 0.18); }
 .socialBtn svg { width: 18px; height: 18px; fill: currentColor; }
 
-.lang { display: none; } /* la mostriamo su desktop */
+.lang { display: none; }
 .lang :global(button) {
   height: 36px;
   padding: 0 12px;

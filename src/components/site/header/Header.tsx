@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import Slide from "@mui/material/Slide";
 import type { TransitionProps } from "@mui/material/transitions";
 import { useRouter } from "next/navigation";
-
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -46,6 +46,7 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export default function Header({}: { socials?: SocialLinks }) {
+  
   const t = useTranslations("Nav");
   const pathname = usePathname();
   const router = useRouter();
@@ -54,6 +55,11 @@ export default function Header({}: { socials?: SocialLinks }) {
   const locale: Locale = isLocale(first) ? first : "it";
 
   const [open, setOpen] = useState(false);
+
+    const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 24,
+  });
 
   const links = useMemo(
     () => [
@@ -70,15 +76,18 @@ export default function Header({}: { socials?: SocialLinks }) {
   return (
     <>
       <AppBar
-        position="sticky"
+        position="fixed"
         elevation={0}
         sx={{
-          background: "rgba(10,12,16,0.40)",
+          background: trigger ? "rgba(10,12,16,0.88)" : "rgba(10,12,16,0.18)",
           backdropFilter: "blur(10px)",
-          borderBottom: "1px solid rgba(255,210,0,0.20)",
+          borderBottom: trigger
+            ? "1px solid rgba(255,210,0,0.22)"
+            : "1px solid rgba(255,210,0,0.10)",
+          transition: "background 220ms ease, border-color 220ms ease",
         }}
       >
-        <Toolbar sx={{ maxWidth: 1200, width: "100%", mx: "auto", px: 2 }}>
+        <Toolbar sx={{ maxWidth: 1200, width: "100%", mx: "auto", px: 2, minHeight: { xs: 64, md: 72 } }}>
           <Link
             href={`/${locale}`}
             style={{ display: "inline-flex", alignItems: "center" }}
@@ -99,7 +108,7 @@ export default function Header({}: { socials?: SocialLinks }) {
             <IconButton
               aria-label="Instagram"
               color="inherit"
-              href=""
+              href="/"
               target="_blank"
             >
               <InstagramIcon />
@@ -107,7 +116,7 @@ export default function Header({}: { socials?: SocialLinks }) {
             <IconButton
               aria-label="Facebook"
               color="inherit"
-              href=""
+              href="/"
               target="_blank"
             >
               <FacebookIcon />
@@ -115,7 +124,7 @@ export default function Header({}: { socials?: SocialLinks }) {
             <IconButton
               aria-label="TikTok"
               color="inherit"
-              href=""
+              href="/"
               target="_blank"
             >
               <MusicNoteIcon />
@@ -123,7 +132,7 @@ export default function Header({}: { socials?: SocialLinks }) {
             <IconButton
               aria-label="WhatsApp"
               color="inherit"
-              href=""
+              href="/"
               target="_blank"
             >
               <WhatsAppIcon />
@@ -141,7 +150,7 @@ export default function Header({}: { socials?: SocialLinks }) {
           </Stack>
         </Toolbar>
       </AppBar>
-
+        <Box sx={{ height: { xs: 64, md: 72 } }} />
       <Dialog
         fullScreen
         open={open}
@@ -217,7 +226,7 @@ export default function Header({}: { socials?: SocialLinks }) {
               <IconButton
                 aria-label="Instagram"
                 color="inherit"
-                href=""
+                href="/"
                 target="_blank"
               >
                 <InstagramIcon />
@@ -225,7 +234,7 @@ export default function Header({}: { socials?: SocialLinks }) {
               <IconButton
                 aria-label="Facebook"
                 color="inherit"
-                href=""
+                href="/"
                 target="_blank"
               >
                 <FacebookIcon />
@@ -233,7 +242,7 @@ export default function Header({}: { socials?: SocialLinks }) {
               <IconButton
                 aria-label="TikTok"
                 color="inherit"
-                href=""
+                href="/"
                 target="_blank"
               >
                 <MusicNoteIcon />

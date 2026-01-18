@@ -1,7 +1,10 @@
 {
-  "Home": {
-    "title": "PKT Swiss Kart Team",
-    "subtitle": "Passione, crescita e competizione."
+  "HomeHero": {
+    "kicker": "Team di karting svizzero",
+    "title": "PKT SWISS KART TEAM",
+    "subtitle": "Passione, crescita e competizione. Dalla scuola karting alla pista.",
+    "ctaServices": "Scopri i servizi",
+    "ctaDriversRaces": "Piloti & Gare"
   },
   "Nav": {
     "home": "Home",
