@@ -44,6 +44,28 @@
       }
     ]
   },
+   "History": {
+    "kicker": "Storia",
+    "title": "La nostra storia",
+    "lead": "Dalla nascita del team alla crescita in pista: un percorso fatto di metodo, costanza e obiettivi chiari. Oggi affianchiamo piloti e famiglie dalla scuola karting fino alle competizioni.",
+    "items": [
+      {
+        "year": "2018",
+        "title": "Nasce il team",
+        "desc": "Prime gare, prime esperienze e una direzione chiara: crescere con metodo."
+      },
+      {
+        "year": "2021",
+        "title": "Crescita e risultati",
+        "desc": "Aumentano le attività in pista, arrivano i primi podi e la squadra si struttura."
+      },
+      {
+        "year": "2025",
+        "title": "Scuola karting",
+        "desc": "Percorsi dedicati per formare giovani piloti e accompagnarli in gara."
+      }
+    ]
+  },
   "Footer": {
     "email": "Email",
     "partners": "Partner",

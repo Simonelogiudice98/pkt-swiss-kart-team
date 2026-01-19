@@ -1,17 +1,31 @@
 .about {
   padding: 96px 0;
   background: linear-gradient(180deg, rgba(10,12,16,0.96), rgba(10,12,16,0.99));
+
+  position: relative;     
+  overflow: hidden;
+  overflow-x: clip;       
+}
+
+
+@supports not (overflow-x: clip) {
+  .about { overflow-x: hidden; }
 }
 
 .about::before {
   content: "";
   position: absolute;
-  inset: -80px;
+  inset: 0;              
   pointer-events: none;
+
   background:
     radial-gradient(900px 420px at 18% 20%, rgba(11,42,111,0.28), transparent 60%),
     radial-gradient(620px 280px at 82% 62%, rgba(255,210,0,0.08), transparent 65%);
+
   opacity: 0.9;
+
+  filter: blur(10px);
+  transform: scale(1.05);
 }
 
 .container {
@@ -31,7 +45,6 @@
   .grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* LEFT */
 .copy {
   max-width: 640px;
 }
@@ -70,7 +83,6 @@
   max-width: 60ch;
 }
 
-/* bullets pulite */
 .points {
   margin: 18px 0 0;
   padding: 0;
@@ -97,7 +109,6 @@
   box-shadow: 0 0 0 6px rgba(255,210,0,0.08);
 }
 
-/* RIGHT */
 .carousel {
   display: grid;
   gap: 10px;

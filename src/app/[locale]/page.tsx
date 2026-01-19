@@ -1,8 +1,8 @@
 import styles from "@/styles/home.module.scss";
-import HomeHero from "@/components/home/HomeHero";
-import AboutSection from "@/components/home/AboutSection";
-import TimelineSection from "@/components/home/TimelineSection";
+import HomeHero from "@/components/home/homeHero/HomeHero";
+import AboutSection from "@/components/home/aboutSection/AboutSection";
 import PartnersSection from "@/components/home/PartnersSection";
+import HistorySection from "@/components/home/historySection/HistorySection";
 
 export default function HomePage() {
   return (
@@ -11,25 +11,7 @@ export default function HomePage() {
 
       <AboutSection />
 
-      <TimelineSection
-        items={[
-          {
-            year: "2018",
-            title: "Nasce il team",
-            description: "Prime gare, prime esperienze e prime soddisfazioni.",
-          },
-          {
-            year: "2021",
-            title: "Crescita e risultati",
-            description: "Arrivano i primi podi e si allarga la squadra.",
-          },
-          {
-            year: "2025",
-            title: "Scuola Karting",
-            description: "Percorsi dedicati per crescere giovani piloti e portarli in gara.",
-          },
-        ]}
-      />
+      <HistorySection />
 
       <PartnersSection
         items={[

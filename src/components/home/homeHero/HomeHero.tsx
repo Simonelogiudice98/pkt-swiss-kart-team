@@ -21,6 +21,7 @@ export default function HomeHero() {
     <section className={styles.hero}>
       <div className={styles.heroMedia} aria-hidden>
         <Image
+          className={styles.heroImg}
           src="/images/hero-kart.jpg"
           alt=""
           fill
@@ -46,7 +47,10 @@ export default function HomeHero() {
             <Link className={styles.primaryBtn} href={`/${locale}/servizi`}>
               {t("ctaServices")}
             </Link>
-            <Link className={styles.secondaryBtn} href={`/${locale}/piloti-gare`}>
+            <Link
+              className={styles.secondaryBtn}
+              href={`/${locale}/piloti-gare`}
+            >
               {t("ctaDriversRaces")}
             </Link>
           </div>
