@@ -12,19 +12,37 @@
     "ctaServices": "Explore services",
     "ctaDriversRaces": "Drivers & Races"
   },
-  "About": {
+ "About": {
     "kicker": "About",
-    "title": "One team. One vision.",
-    "lead": "We bring passion, expertise and full support to the track, so you can focus on racing. From karting school to competition, we guide drivers and families through every step.",
+    "title": "One team, one vision",
+    "lead": "We bring expertise, passion and full support to the track, so you can race without distractions. From karting school to competition, we guide every step of the journey.",
     "points": [
       "Full trackside and race-day support",
       "A growth pathway for drivers and families",
-      "Organisation, preparation and method"
+      "Preparation, organisation and method"
     ],
-    "founderAlt": "Team founder",
-    "founderLabel": "Founder",
-    "founderName": "Name Surname",
-    "badge": "Since 2018"
+    "badge": "Since 2018",
+    "prev": "Previous slide",
+    "next": "Next slide",
+    "dotsLabel": "Select a slide",
+    "goTo": "Go to slide {index}",
+    "slides": [
+      {
+        "alt": "Team at the track",
+        "title": "Trackside support",
+        "caption": "Consistent presence and technical support during tests and race weekends."
+      },
+      {
+        "alt": "Kart in action",
+        "title": "Driver development",
+        "caption": "Training and progression: from karting school to competition."
+      },
+      {
+        "alt": "Team briefing",
+        "title": "Preparation & method",
+        "caption": "Professional standards and attention to detail for consistent performance."
+      }
+    ]
   },
   "Footer": {
   "email": "Email",

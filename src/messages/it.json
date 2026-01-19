@@ -12,19 +12,37 @@
     "ctaServices": "Scopri i servizi",
     "ctaDriversRaces": "Piloti & Gare"
   },
-  "About": {
+   "About": {
     "kicker": "Chi siamo",
     "title": "Un team, una visione",
-    "lead": "Portiamo in pista competenza, passione e supporto completo per correre senza pensieri, dalla scuola karting alle competizioni.",
+    "lead": "Portiamo in pista competenza, passione e supporto completo per correre senza pensieri. Dalla scuola karting alle competizioni, seguiamo ogni passo della crescita.",
     "points": [
-      "Assistenza completa in pista e in gara",
+      "Supporto completo in pista e in gara",
       "Percorso di crescita per piloti e famiglie",
-      "Organizzazione, preparazione e metodo"
+      "Preparazione, organizzazione e metodo"
     ],
-    "founderAlt": "Fondatore del team",
-    "founderLabel": "Fondatore",
-    "founderName": "Nome Cognome",
-    "badge": "Since 2018"
+    "badge": "Since 2018",
+    "prev": "Slide precedente",
+    "next": "Slide successiva",
+    "dotsLabel": "Seleziona una slide",
+    "goTo": "Vai alla slide {index}",
+    "slides": [
+      {
+        "alt": "Team in pista",
+        "title": "Trackside support",
+        "caption": "Presenza costante e supporto tecnico durante test e weekend di gara."
+      },
+      {
+        "alt": "Kart in azione",
+        "title": "Driver development",
+        "caption": "Allenamento e progressione: dalla scuola karting alla competizione."
+      },
+      {
+        "alt": "Briefing del team",
+        "title": "Preparation & method",
+        "caption": "Organizzazione e cura dei dettagli per performance consistenti."
+      }
+    ]
   },
   "Footer": {
     "email": "Email",
