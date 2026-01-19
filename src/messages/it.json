@@ -1,4 +1,10 @@
 {
+  "Nav": {
+    "home": "Home",
+    "services": "Servizi",
+    "driversRaces": "Piloti & Gare",
+    "contact": "Contatti"
+  },
   "HomeHero": {
     "kicker": "Team di karting svizzero",
     "title": "PKT SWISS KART TEAM",
@@ -6,16 +12,24 @@
     "ctaServices": "Scopri i servizi",
     "ctaDriversRaces": "Piloti & Gare"
   },
-  "Nav": {
-    "home": "Home",
-    "services": "Servizi",
-    "driversRaces": "Piloti & Gare",
-    "contact": "Contatti"
+  "About": {
+    "kicker": "Chi siamo",
+    "title": "Un team, una visione",
+    "lead": "Portiamo in pista competenza, passione e supporto completo per correre senza pensieri, dalla scuola karting alle competizioni.",
+    "points": [
+      "Assistenza completa in pista e in gara",
+      "Percorso di crescita per piloti e famiglie",
+      "Organizzazione, preparazione e metodo"
+    ],
+    "founderAlt": "Fondatore del team",
+    "founderLabel": "Fondatore",
+    "founderName": "Nome Cognome",
+    "badge": "Since 2018"
   },
   "Footer": {
-  "email": "Email",
-  "partners": "Partner",
-  "partnersHint": "Sponsor e partner (loghi o link cliccabili)."
+    "email": "Email",
+    "partners": "Partner",
+    "partnersHint": "Sponsor e partner (loghi o link cliccabili)."
   }
 
 }

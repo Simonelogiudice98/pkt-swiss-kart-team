@@ -1,4 +1,10 @@
 {
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "driversRaces": "Drivers & Races",
+    "contact": "Contact"
+  },
   "HomeHero": {
     "kicker": "Swiss karting team",
     "title": "PKT SWISS KART TEAM",
@@ -6,11 +12,19 @@
     "ctaServices": "Explore services",
     "ctaDriversRaces": "Drivers & Races"
   },
-  "Nav": {
-    "home": "Home",
-    "services": "Services",
-    "driversRaces": "Drivers & Races",
-    "contact": "Contact"
+  "About": {
+    "kicker": "About",
+    "title": "One team. One vision.",
+    "lead": "We bring passion, expertise and full support to the track, so you can focus on racing. From karting school to competition, we guide drivers and families through every step.",
+    "points": [
+      "Full trackside and race-day support",
+      "A growth pathway for drivers and families",
+      "Organisation, preparation and method"
+    ],
+    "founderAlt": "Team founder",
+    "founderLabel": "Founder",
+    "founderName": "Name Surname",
+    "badge": "Since 2018"
   },
   "Footer": {
   "email": "Email",

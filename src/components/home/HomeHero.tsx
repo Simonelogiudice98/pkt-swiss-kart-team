@@ -4,9 +4,18 @@ import styles from "./HomeHero.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import { locales, type Locale } from "@/i18n";
 
-export default function HomeHero({ locale }: { locale: string }) {
+function isLocale(x: string): x is Locale {
+  return (locales as readonly string[]).includes(x);
+}
+
+export default function HomeHero() {
   const t = useTranslations("HomeHero");
+  const pathname = usePathname();
+  const first = pathname.split("/").filter(Boolean)[0] ?? "";
+  const locale: Locale = isLocale(first) ? first : "it";
 
   return (
     <section className={styles.hero}>
@@ -31,7 +40,6 @@ export default function HomeHero({ locale }: { locale: string }) {
           </div>
 
           <h1 className={styles.heroTitle}>{t("title")}</h1>
-
           <p className={styles.heroSubtitle}>{t("subtitle")}</p>
 
           <div className={styles.heroActions}>
