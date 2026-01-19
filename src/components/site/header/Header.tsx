@@ -108,7 +108,7 @@ export default function Header({}: { socials?: SocialLinks }) {
             <IconButton
               aria-label="Instagram"
               color="inherit"
-              href="/"
+              href="https://www.instagram.com/_pktswisskartteam_?igsh=MXA3ZDV5MmlsNHlwMw=="
               target="_blank"
             >
               <InstagramIcon />

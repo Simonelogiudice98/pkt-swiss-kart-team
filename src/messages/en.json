@@ -47,22 +47,31 @@
   "History": {
     "kicker": "History",
     "title": "Our story",
-    "lead": "From the team’s early days to consistent growth on track: a journey built on method, discipline and clear goals. Today we support drivers and families from karting school through competition.",
+    "lead": "From the team’s early days to consistent growth on track: a journey built on method, discipline and clear goals.",
     "items": [
       {
         "year": "2018",
         "title": "The team begins",
-        "desc": "First races, first experience, and a clear direction: progress through method."
+        "desc": "First races, first experience, and a clear direction: progress through method.",
+        "icon": "flag",
+        "image": "/images/history/2018.jpg",
+        "imageAlt": "Team first season"
       },
       {
         "year": "2021",
         "title": "Growth and results",
-        "desc": "More track time, early podiums, and a stronger team structure."
+        "desc": "More track time, early podiums, and a stronger team structure.",
+        "icon": "trophy",
+        "image": "/images/history/2021.jpg",
+        "imageAlt": "Racing results"
       },
       {
         "year": "2025",
         "title": "Karting school",
-        "desc": "Dedicated programmes to develop young drivers and bring them into competition."
+        "desc": "Dedicated programmes to develop young drivers and bring them into competition.",
+        "icon": "graduation",
+        "image": "/images/history/2025.jpg",
+        "imageAlt": "Karting school"
       }
     ]
   },
