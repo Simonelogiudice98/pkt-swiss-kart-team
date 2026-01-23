@@ -77,7 +77,15 @@
   },
   "partners": {
     "title": "Partners",
-    "subtitle": "Sponsors and partners supporting the team."
+    "subtitle": "Sponsors and partners supporting the team.",
+    "items": {
+      "rotax": { "name": "Rotax" },
+      "iame": { "name": "IAME" },
+      "crg": { "name": "CRG" },
+      "vega": { "name": "Vega Tyres" },
+      "tonyKart": { "name": "Tony Kart" },
+      "birelart": { "name": "Birel ART" }
+    }
   },
   "Footer": {
   "email": "Email",
