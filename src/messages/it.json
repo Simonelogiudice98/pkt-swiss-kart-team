@@ -75,10 +75,14 @@
       }
     ]
   },
+   "partners": {
+    "title": "Partners",
+    "subtitle": "Sponsor e partner che supportano il team."
+  },
   "Footer": {
     "email": "Email",
     "partners": "Partner",
-    "partnersHint": "Sponsor e partner (loghi o link cliccabili)."
+    "partnersHint": "Sponsor e partner ."
   }
 
 }
