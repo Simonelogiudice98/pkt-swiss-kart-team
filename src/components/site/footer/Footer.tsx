@@ -2,6 +2,14 @@
 
 import styles from "./Footer.module.scss";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TikTokIcon from "@mui/icons-material/MusicNote"; 
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PlaceIcon from "@mui/icons-material/Place";
 
 type FooterProps = {
   legalSeat?: string;
@@ -12,7 +20,6 @@ type FooterProps = {
     tiktok?: string;
     whatsapp?: string;
   };
-  partners?: Array<{ name: string; href: string }>;
 };
 
 export default function Footer({
@@ -24,58 +31,106 @@ export default function Footer({
     tiktok: "#",
     whatsapp: "#",
   },
-  partners = [
-    { name: "Partner 1", href: "#" },
-    { name: "Partner 2", href: "#" },
-  ],
 }: FooterProps) {
   const t = useTranslations("Footer");
+  const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} aria-label={t("ariaFooter")}>
+      <div className={styles.topAccent} />
+
       <div className={styles.inner}>
-        <div className={styles.block}>
-          <div className={styles.brand}>PKT Swiss Kart Team</div>
-          <div className={styles.line}>{legalSeat}</div>
-          <div className={styles.line}>
-            {t("email")}:{" "}
-            <a className={styles.link} href={`mailto:${email}`}>
-              {email}
-            </a>
+        <div className={styles.brandCol}>
+          <div className={styles.brandRow}>
+            <div className={styles.brand}>{t("brand")}</div>
+            <span className={styles.since}>{t("since")}</span>
           </div>
 
-          <div className={styles.socialRow} aria-label="Social links">
-            <a className={styles.pill} href={socials.instagram} target="_blank" rel="noreferrer">
-              Instagram
+          <div className={styles.infoList}>
+            <div className={styles.infoItem}>
+              <PlaceIcon className={styles.infoIcon} fontSize="small" />
+              <span className={styles.infoText}>{legalSeat}</span>
+            </div>
+
+            <div className={styles.infoItem}>
+              <MailOutlineIcon className={styles.infoIcon} fontSize="small" />
+              <a className={styles.link} href={`mailto:${email}`}>
+                {email}
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.socialRow} aria-label={t("ariaSocial")}>
+            <a
+              className={`${styles.socialBtn} ${styles.ig}`}
+              href={socials.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <InstagramIcon fontSize="small" />
             </a>
-            <a className={styles.pill} href={socials.facebook} target="_blank" rel="noreferrer">
-              Facebook
+
+            <a
+              className={`${styles.socialBtn} ${styles.fb}`}
+              href={socials.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              title="Facebook"
+            >
+              <FacebookIcon fontSize="small" />
             </a>
-            <a className={styles.pill} href={socials.tiktok} target="_blank" rel="noreferrer">
-              TikTok
+
+            <a
+              className={`${styles.socialBtn} ${styles.tk}`}
+              href={socials.tiktok}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+              title="TikTok"
+            >
+              <TikTokIcon fontSize="small" />
             </a>
-            <a className={styles.whatsapp} href={socials.whatsapp} target="_blank" rel="noreferrer">
-              WhatsApp
+
+            <a
+              className={`${styles.socialBtn} ${styles.wa}`}
+              href={socials.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp"
+              title="WhatsApp"
+            >
+              <WhatsAppIcon fontSize="small" />
             </a>
           </div>
         </div>
 
-        <div className={styles.block}>
-          <div className={styles.title}>{t("partners")}</div>
-          <div className={styles.muted}>{t("partnersHint")}</div>
-
-          <div className={styles.partnerList}>
-            {partners.map((p) => (
-              <a key={p.name} className={styles.link} href={p.href} target="_blank" rel="noreferrer">
-                {p.name}
-              </a>
-            ))}
-          </div>
+        <div className={styles.linksCol}>
+          <div className={styles.colTitle}>{t("quickLinks")}</div>
+          <nav className={styles.linksList} aria-label={t("ariaQuickLinks")}>
+            <Link className={styles.navLink} href="/servizi">
+              {t("services")}
+            </Link>
+            <Link className={styles.navLink} href="/piloti-gare">
+              {t("driversRaces")}
+            </Link>
+            <Link className={styles.navLink} href="/contatti">
+              {t("contacts")}
+            </Link>
+          </nav>
         </div>
       </div>
 
       <div className={styles.bottom}>
-        <span>© {new Date().getFullYear()} PKT Swiss Kart Team</span>
+        <span>
+          © {year} {t("brand")}
+        </span>
+        <span className={styles.sep} aria-hidden>
+          •
+        </span>
+        <span className={styles.bottomMuted}>{t("rights")}</span>
       </div>
     </footer>
   );

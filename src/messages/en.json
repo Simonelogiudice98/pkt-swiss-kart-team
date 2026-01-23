@@ -87,10 +87,19 @@
       "birelart": { "name": "Birel ART" }
     }
   },
-  "Footer": {
-  "email": "Email",
-  "partners": "Partners",
-  "partnersHint": "Sponsors and partners."
-}
+   "Footer": {
+    "ariaFooter": "Site footer",
+    "ariaSocial": "Social links",
+    "ariaQuickLinks": "Quick links",
+    "brand": "PKT Swiss Kart Team",
+    "since": "Since 2018",
+    "email": "Email",
+    "quickLinks": "Quick links",
+    "services": "Services",
+    "driversRaces": "Drivers & Races",
+    "contacts": "Contacts",
+    "whatsappCta": "WhatsApp",
+    "rights": "All rights reserved."
+  }
 
 }

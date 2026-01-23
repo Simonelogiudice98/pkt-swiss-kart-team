@@ -88,9 +88,20 @@
     }
   },
   "Footer": {
+    "ariaFooter": "Footer del sito",
+    "ariaSocial": "Link social",
+    "ariaQuickLinks": "Link rapidi",
+    "brand": "PKT Swiss Kart Team",
+    "since": "Dal 2018",
     "email": "Email",
-    "partners": "Partner",
-    "partnersHint": "Sponsor e partner ."
+    "quickLinks": "Link rapidi",
+    "services": "Servizi",
+    "driversRaces": "Piloti & Gare",
+    "contacts": "Contatti",
+    "whatsappCta": "WhatsApp",
+    "rights": "Tutti i diritti riservati."
   }
-
 }
+
+
+
