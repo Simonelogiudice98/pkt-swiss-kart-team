@@ -46,7 +46,6 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export default function Header({}: { socials?: SocialLinks }) {
-  
   const t = useTranslations("Nav");
   const pathname = usePathname();
   const router = useRouter();
@@ -56,7 +55,7 @@ export default function Header({}: { socials?: SocialLinks }) {
 
   const [open, setOpen] = useState(false);
 
-    const trigger = useScrollTrigger({
+  const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 24,
   });
@@ -87,7 +86,15 @@ export default function Header({}: { socials?: SocialLinks }) {
           transition: "background 220ms ease, border-color 220ms ease",
         }}
       >
-        <Toolbar sx={{ maxWidth: 1200, width: "100%", mx: "auto", px: 2, minHeight: { xs: 64, md: 72 } }}>
+        <Toolbar
+          sx={{
+            maxWidth: 1200,
+            width: "100%",
+            mx: "auto",
+            px: 2,
+            minHeight: { xs: 64, md: 72 },
+          }}
+        >
           <Link
             href={`/${locale}`}
             style={{ display: "inline-flex", alignItems: "center" }}
@@ -98,13 +105,22 @@ export default function Header({}: { socials?: SocialLinks }) {
               width={180}
               height={60}
               priority
-              style={{ filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))" }}
+              style={{
+                height: "auto",
+                width: "clamp(120px, 26vw, 180px)",
+                filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))",
+              }}
             />
           </Link>
 
           <Box sx={{ flex: 1 }} />
 
-          <Stack direction="row" spacing={1} alignItems="center">
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            sx={{ display: { xs: "none", md: "flex" } }}
+          >
             <IconButton
               aria-label="Instagram"
               color="inherit"
@@ -148,9 +164,25 @@ export default function Header({}: { socials?: SocialLinks }) {
               <MenuIcon />
             </IconButton>
           </Stack>
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            sx={{ display: { xs: "flex", md: "none" } }}
+          >
+            <LocaleSwitcher />
+
+            <IconButton
+              aria-label="Menu"
+              color="inherit"
+              onClick={() => setOpen(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Stack>
         </Toolbar>
       </AppBar>
-        <Box sx={{ height: { xs: 64, md: 72 } }} />
+      <Box sx={{ height: { xs: 64, md: 72 } }} />
       <Dialog
         fullScreen
         open={open}
