@@ -72,9 +72,11 @@
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+
+  color: rgba(255, 215, 0, 0.95);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  background: rgba(255, 215, 0, 0.10);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.10);
   padding: 8px 10px;
   border-radius: 12px;
   backdrop-filter: blur(10px);

@@ -2,43 +2,51 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Box, Card, CardActionArea, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardActionArea } from "@mui/material";
 import s from "./PilotCard.module.scss";
 
-export type Pilot = {
+export interface Pilot {
   id: string;
-  name: string;
+  name: string;         
   category: string;
   since: number;
-  photoUrl: string;
-};
+  photoUrl?: string;
+}
 
 export default function PilotCard({ pilot }: { pilot: Pilot }) {
   return (
     <Card className={s.card} elevation={0}>
       <CardActionArea className={s.cardAction}>
         <Box className={s.mediaWrap}>
-          <Image
-            src={pilot.photoUrl}
-            alt={pilot.name}
-            fill
-            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-            className={s.media}
-          />
+          {pilot.photoUrl ? (
+            <Image
+              src={pilot.photoUrl}
+              alt={pilot.name}
+              fill
+              sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+              className={s.media}
+              unoptimized
+            />
+          ) : (
+            <div className={s.mediaPlaceholder}>
+              <span className={s.placeholderText}>Foto in arrivo</span>
+            </div>
+          )}
+
           <div className={s.mediaOverlay} />
-        </Box>
 
-        <CardContent className={s.cardContent}>
-          <div className={s.cardTopRow}>
-            <span className={s.tag}>{pilot.category}</span>
-            <span className={s.tagMuted}>dal {pilot.since}</span>
+          <div className={s.overlayContent}>
+            <div className={s.badges}>
+              <span className={s.tag}>{pilot.category}</span>
+              <span className={s.tagMuted}>dal {pilot.since}</span>
+            </div>
+
+            <div className={s.bottom}>
+              <div className={s.name}>{pilot.name}</div>
+              <div className={s.underline} />
+            </div>
           </div>
-
-          <Typography component="h3" className={s.cardTitle}>
-            {pilot.name}
-          </Typography>
-
-        </CardContent>
+        </Box>
       </CardActionArea>
     </Card>
   );

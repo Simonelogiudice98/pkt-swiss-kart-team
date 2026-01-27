@@ -22,7 +22,6 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-// MUI icons (leggeri e già nel tuo stack)
 import FlagIcon from "@mui/icons-material/Flag";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SchoolIcon from "@mui/icons-material/School";
