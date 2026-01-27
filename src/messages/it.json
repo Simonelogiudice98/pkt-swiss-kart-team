@@ -87,6 +87,17 @@
       "birelart": { "name": "Birel ART" }
     }
   },
+  "DriversRaces": {
+    "kicker": "Piloti & Gare",
+    "title": "Piloti",
+    "lead": "Dal karting school alla competizione: un percorso guidato con metodo e supporto in pista.\nScopri i nostri piloti e la loro crescita tra allenamenti, test e weekend di gara.",
+    "badge": "Season 2026"
+  },
+  "RacesCalendar": {
+    "kicker": "Piloti & Gare",
+    "title": "Calendario gare",
+    "lead": "Tutte le date della stagione e gli appuntamenti in pista.\nAggiornato automaticamente tramite Google Drive."
+  },
   "Footer": {
     "ariaFooter": "Footer del sito",
     "ariaSocial": "Link social",

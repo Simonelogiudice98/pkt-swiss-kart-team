@@ -1,0 +1,97 @@
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(10, 12, 16, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 215, 0, 0.55);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.cardAction {
+  height: 100%;
+}
+
+.mediaWrap {
+  position: relative;
+  height: 230px;
+}
+
+.media {
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.mediaOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.08) 70%);
+}
+
+.cardContent {
+  padding: 16px 16px 18px;
+}
+
+.cardTopRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+
+  background: rgba(255, 215, 0, 0.12);
+  color: rgba(255, 215, 0, 0.95);
+  border: 1px solid rgba(255, 215, 0, 0.28);
+}
+
+.tagMuted {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0;
+}
+
+.cardText {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .mediaWrap {
+    height: 210px;
+  }
+}

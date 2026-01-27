@@ -2,7 +2,16 @@ import type {NextConfig} from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
-  turbopack: {}
+  turbopack: {},
+    images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();
