@@ -1,16 +1,16 @@
 
-export type Item = {
+export interface Item {
   year: string;
   title: string;
   description: string;
 };
 
-export type Slide = {
+export interface Slide {
   src: string;
   alt: string;
 };
 
-export type HistoryItem = {
+export interface HistoryItem {
   year: string;
   title: string;
   desc: string;
@@ -19,20 +19,20 @@ export type HistoryItem = {
   imageAlt?: string;
 };
 
-export type Partner = {
+export interface Partner {
   name: string;     
   href: string;
   logoSrc?: string; 
   key?: string;     
 };
 
-export type PilotApi = {
+export interface PilotApi {
   id: string;
   name: string;
   photoFileId: string | undefined;
 };
 
-export type RaceEvent = {
+export interface RaceEvent {
   id: string;
   title: string;
   date: string;
@@ -40,7 +40,7 @@ export type RaceEvent = {
   posterUrl: string;
 };
 
-export type FooterProps = {
+export interface FooterProps {
   legalSeat?: string;
   email?: string;
   socials?: {
@@ -51,14 +51,14 @@ export type FooterProps = {
   };
 };
 
-export type SocialLinks = {
+export interface SocialLinks {
   instagram?: string;
   facebook?: string;
   tiktok?: string;
   whatsapp?: string;
 };
 
-export type PilotDTO = {
+export interface PilotDTO {
   id: string; 
   name: string; 
   photoFileId?: string; 
