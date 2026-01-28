@@ -6,12 +6,7 @@ import { useTranslations } from "next-intl";
 
 import PilotCard, { Pilot } from "../PilotCard/PilotCard";
 import s from "./DriversSection.module.scss";
-
-type PilotApi = {
-  id: string;
-  name: string;
-  photoFileId: string | undefined;
-};
+import { PilotApi } from "@/types/types";
 
 function isPilotApi(x: unknown): x is PilotApi {
   if (!x || typeof x !== "object") return false;
@@ -20,7 +15,6 @@ function isPilotApi(x: unknown): x is PilotApi {
   const okPhoto = o.photoFileId === undefined || typeof o.photoFileId === "string";
   return okBase && okPhoto;
 }
-
 
 function isPilotApiArray(x: unknown): x is PilotApi[] {
   return Array.isArray(x) && x.every(isPilotApi);

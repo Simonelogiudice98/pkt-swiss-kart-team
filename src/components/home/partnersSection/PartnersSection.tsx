@@ -1,13 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import styles from "./partnersSection.module.scss";
-
-type Partner = {
-  name: string;     
-  href: string;
-  logoSrc?: string; 
-  key?: string;     
-};
+import { Partner } from "@/types/types";
 
 export default function PartnersSection({ items }: { items: Partner[] }) {
   const t = useTranslations("partners");

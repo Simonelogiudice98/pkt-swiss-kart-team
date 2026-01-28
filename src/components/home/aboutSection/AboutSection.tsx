@@ -7,11 +7,7 @@ import * as React from "react";
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-
-type Slide = {
-  src: string;
-  alt: string;
-};
+import { Slide } from "@/types/types";
 
 export default function AboutSection() {
   const t = useTranslations("About");

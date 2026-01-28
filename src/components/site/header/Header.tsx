@@ -26,17 +26,11 @@ import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import * as React from "react";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { locales, type Locale } from "@/i18n";
+import { SocialLinks } from "@/types/types";
 
 function isLocale(x: string): x is Locale {
   return (locales as readonly string[]).includes(x);
 }
-
-type SocialLinks = {
-  instagram?: string;
-  facebook?: string;
-  tiktok?: string;
-  whatsapp?: string;
-};
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement },

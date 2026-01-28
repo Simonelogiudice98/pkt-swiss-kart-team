@@ -4,14 +4,7 @@ import * as React from "react";
 import { Container, Grid } from "@mui/material";
 import { useTranslations } from "next-intl";
 import s from "./RacesCalendarSection.module.scss";
-
-export type RaceEvent = {
-  id: string;
-  title: string;
-  date: string;
-  track: string;
-  posterUrl: string;
-};
+import { RaceEvent } from "@/types/types";
 
 const MOCK_RACES: RaceEvent[] = [
   {

@@ -1,10 +1,6 @@
 import styles from "@/styles/home.module.scss";
+import { Item } from "@/types/types";
 
-type Item = {
-  year: string;
-  title: string;
-  description: string;
-};
 
 export default function TimelineSection({ items }: { items: Item[] }) {
   return (

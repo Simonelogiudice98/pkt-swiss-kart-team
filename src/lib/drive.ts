@@ -1,10 +1,5 @@
+import { PilotDTO } from "@/types/types";
 import { google } from "googleapis";
-
-export type PilotDTO = {
-  id: string; 
-  name: string; 
-  photoFileId?: string; 
-};
 
 function getDriveClient() {
   const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;

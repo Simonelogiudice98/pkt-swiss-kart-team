@@ -25,15 +25,7 @@ import { useTranslations } from "next-intl";
 import FlagIcon from "@mui/icons-material/Flag";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SchoolIcon from "@mui/icons-material/School";
-
-type HistoryItem = {
-  year: string;
-  title: string;
-  desc: string;
-  icon?: "flag" | "trophy" | "graduation";
-  image?: string;
-  imageAlt?: string;
-};
+import { HistoryItem } from "@/types/types";
 
 function ItemIcon({ icon }: { icon?: HistoryItem["icon"] }) {
   const sx = { fontSize: 18, color: "rgba(10,12,16,0.9)" };

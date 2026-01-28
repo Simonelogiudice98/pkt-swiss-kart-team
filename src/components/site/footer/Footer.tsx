@@ -10,17 +10,7 @@ import TikTokIcon from "@mui/icons-material/MusicNote";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PlaceIcon from "@mui/icons-material/Place";
-
-type FooterProps = {
-  legalSeat?: string;
-  email?: string;
-  socials?: {
-    instagram?: string;
-    facebook?: string;
-    tiktok?: string;
-    whatsapp?: string;
-  };
-};
+import { FooterProps } from "@/types/types";
 
 export default function Footer({
   legalSeat = "Sede legale: …",
