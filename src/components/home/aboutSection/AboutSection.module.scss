@@ -2,11 +2,10 @@
   padding: 96px 0;
   background: linear-gradient(180deg, rgba(10,12,16,0.96), rgba(10,12,16,0.99));
 
-  position: relative;     
+  position: relative;
   overflow: hidden;
-  overflow-x: clip;       
+  overflow-x: clip;
 }
-
 
 @supports not (overflow-x: clip) {
   .about { overflow-x: hidden; }
@@ -15,7 +14,7 @@
 .about::before {
   content: "";
   position: absolute;
-  inset: 0;              
+  inset: 0;
   pointer-events: none;
 
   background:
@@ -23,7 +22,6 @@
     radial-gradient(620px 280px at 82% 62%, rgba(255,210,0,0.08), transparent 65%);
 
   opacity: 0.9;
-
   filter: blur(10px);
   transform: scale(1.05);
 }
@@ -132,14 +130,72 @@
 .media {
   position: relative;
   aspect-ratio: 16 / 10;
+  outline: none;
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.06) contrast(1.05);
+  transform: scale(1.02);
+  animation: aboutFade 260ms ease both;
+}
+
+@keyframes aboutFade {
+  from { opacity: 0; transform: scale(1.00); }
+  to { opacity: 1; transform: scale(1.02); }
 }
 
 .vignette {
   position: absolute;
   inset: 0;
+  pointer-events: none;
+
   background:
     radial-gradient(900px 420px at 22% 18%, rgba(11,42,111,0.20), transparent 60%),
     linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
+}
+
+.counter {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10,12,16,0.55);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+  pointer-events: none;
+}
+
+.counterAccent { color: rgba(255,210,0,0.95); }
+.counterSep { margin: 0 6px; color: rgba(255,255,255,0.45); }
+.counterTotal { color: rgba(255,255,255,0.82); }
+
+.swipeHint {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(10,12,16,0.45);
+  backdrop-filter: blur(10px);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+  pointer-events: none;
+}
+
+@media (min-width: 901px) {
+  .swipeHint { display: none; }
 }
 
 .caption {
@@ -161,6 +217,7 @@
   font-size: 14px;
 }
 
+/* Controls */
 .controls {
   display: grid;
   grid-template-columns: 44px 1fr 44px;
@@ -177,12 +234,33 @@
   background: rgba(255,255,255,0.06);
   color: rgba(255,255,255,0.92);
   cursor: pointer;
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-}
-.navBtn:hover {
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.10);
-  border-color: rgba(255,210,0,0.28);
+
+  display: grid;
+  place-items: center;
+
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+
+  svg { font-size: 22px; }
+
+  &:hover {
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,210,0,0.28);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: rgba(255,210,0,0.35);
+    box-shadow: 0 0 0 3px rgba(255,210,0,0.18);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 .dots {
@@ -199,11 +277,19 @@
   background: rgba(255,255,255,0.08);
   cursor: pointer;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,210,0,0.28);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,210,0,0.14);
+    border-color: rgba(255,210,0,0.35);
+  }
 }
-.dot:hover {
-  transform: translateY(-1px);
-  border-color: rgba(255,210,0,0.28);
-}
+
 .dotActive {
   background: rgba(255,210,0,0.90);
   border-color: rgba(255,210,0,0.90);
