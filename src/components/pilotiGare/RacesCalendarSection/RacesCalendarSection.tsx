@@ -13,7 +13,7 @@ const MOCK_RACES: RaceEvent[] = [
     date: "12–13 Apr 2026",
     track: "South Garda Karting",
     posterUrl:
-      "https://images.unsplash.com/photo-1520975867597-0f4f9c0a7a3b?auto=format&fit=crop&w=1800&q=80",
+      "https://images.unsplash.com/photo-1633997727088-85d4c40e822f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FyYSUyMGdvJTIwa2FydHxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     id: "r2",
