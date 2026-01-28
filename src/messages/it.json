@@ -98,6 +98,59 @@
     "title": "Calendario gare",
     "lead": "Tutte le date della stagione e gli appuntamenti in pista.\nAggiornato automaticamente tramite Google Drive."
   },
+"Services": {
+  "kicker": "Panoramica",
+  "title": "Servizi",
+  "lead": "Supporto completo in pista e percorsi di crescita pensati per chi vuole vivere il karting con metodo.\nDalla logistica di gara alla formazione dei più giovani: il team ti accompagna in ogni fase, con organizzazione, cura dei dettagli e un obiettivo chiaro — migliorare weekend dopo weekend.",
+  "nav": {
+    "ariaLabel": "Vai a una sezione",
+    "assistance": "Assistenza",
+    "school": "Scuola Karting"
+  },
+  "highlightsAria": "Punti chiave dei servizi",
+  "highlights": [
+    { "title": "Assistenza in pista", "text": "Set-up, controlli e gestione operativa nel weekend di gara." },
+    { "title": "Scuola Karting", "text": "Percorso guidato per bambini e ragazzi, dalle basi alle prime gare." },
+    { "title": "Progressione", "text": "Metodo, obiettivi realistici e miglioramento costante gara dopo gara." }
+  ],
+  "assistance": {
+    "title": "Assistenza",
+    "lead": "In gara conta arrivare pronti. Con il nostro servizio di assistenza ti seguiamo dalla preparazione al weekend in pista, occupandoci di set-up, controlli e gestione operativa.\nL’attrezzatura essenziale è predisposta dal team: tu viaggi leggero e ti concentri su guida e performance, senza stress e senza carichi inutili.",
+    "points": [
+      "Supporto completo in pista e durante il weekend di gara",
+      "Attrezzatura e necessario già predisposti dal team",
+      "Viaggi tranquillo: arrivi e trovi tutto pronto"
+    ],
+    "noteLabel": "Perché funziona",
+    "noteText": "Riduciamo il carico organizzativo e aumentiamo la qualità del tempo in pista: più focus, più continuità, più risultati.",
+    "highlightTitle": "Weekend senza pensieri",
+    "highlightText": "Prepariamo il necessario e ti assistiamo in ogni fase: dall’arrivo ai controlli, fino alla gestione in pista. L’obiettivo è semplice: farti correre nelle migliori condizioni possibili.",
+    "pill1": "Trackside",
+    "pill2": "Set-up",
+    "pill3": "Logistica",
+    "miniLeftTitle": "Cosa porti tu",
+    "miniLeftText": "Casco, abbigliamento e ciò che ti serve per stare comodo in pista.",
+    "miniRightTitle": "Cosa portiamo noi",
+    "miniRightText": "Supporto tecnico, organizzazione e attrezzatura essenziale già predisposta dal team."
+  },
+  "kartingSchool": {
+    "title": "Scuola Karting",
+    "lead": "Un percorso dedicato a bambini e ragazzi, pensato per entrare nel karting nel modo giusto: inserimento graduale, tecnica di guida, abitudini corrette e crescita costante.\nDalla scuola karting alle prime gare, accompagniamo piloti e famiglie con un metodo chiaro, obiettivi realistici e presenza in pista.",
+    "points": [
+      "Inserimento da piccoli e progressione per età e categoria",
+      "Allenamenti, tecnica e mentalità “gara dopo gara”",
+      "Accompagnamento alle competizioni con supporto dedicato"
+    ],
+    "tipLabel": "Percorso guidato",
+    "tipText": "Ogni pilota ha tempi diversi: costruiamo un percorso personalizzato, mantenendo costanza e serenità per pilota e famiglia.",
+    "prev": "Slide precedente",
+    "next": "Slide successiva",
+    "dotsLabel": "Seleziona una foto",
+    "goTo": "Vai alla foto {index}",
+    "carouselLabel": "Galleria foto scuola karting",
+    "swipeHint": "Scorri"
+  }
+},
   "Footer": {
     "ariaFooter": "Footer del sito",
     "ariaSocial": "Link social",

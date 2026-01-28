@@ -98,6 +98,59 @@
     "title": "Race calendar",
     "lead": "All season dates and track events.\nAutomatically updated via Google Drive."
   },
+  "Services": {
+  "kicker": "Overview",
+  "title": "Services",
+  "lead": "Full trackside support and growth paths for anyone who wants to approach karting with a method.\nFrom race logistics to youth training: the team supports you at every step, with organization, attention to detail, and one clear goal — improving weekend after weekend.",
+  "nav": {
+    "ariaLabel": "Jump to a section",
+    "assistance": "Assistance",
+    "school": "Karting School"
+  },
+  "highlightsAria": "Key service highlights",
+  "highlights": [
+    { "title": "Trackside assistance", "text": "Set-up, checks and operational support on race weekends." },
+    { "title": "Karting school", "text": "A guided path for kids and teens, from basics to first races." },
+    { "title": "Progression", "text": "Method, realistic goals and steady improvement race after race." }
+  ],
+  "assistance": {
+    "title": "Assistance",
+    "lead": "In racing, being ready is everything. With our assistance service we support you from preparation to the race weekend on track, taking care of set-up, checks and operations.\nEssential equipment is prepared by the team: you travel light and focus on driving and performance, with no stress and no unnecessary load.",
+    "points": [
+      "Complete trackside support throughout the race weekend",
+      "Equipment and essentials prepared by the team",
+      "Travel with peace of mind: you arrive and everything is ready"
+    ],
+    "noteLabel": "Why it works",
+    "noteText": "We reduce the organizational load and increase the quality of your track time: more focus, more continuity, more results.",
+    "highlightTitle": "A worry-free weekend",
+    "highlightText": "We prepare what’s needed and assist you at every step: from arrival and checks to on-track management. The goal is simple: to have you racing in the best possible conditions.",
+    "pill1": "Trackside",
+    "pill2": "Set-up",
+    "pill3": "Logistics",
+    "miniLeftTitle": "What you bring",
+    "miniLeftText": "Helmet, clothing and whatever you need to feel comfortable on track.",
+    "miniRightTitle": "What we bring",
+    "miniRightText": "Technical support, organization and essential equipment prepared by the team."
+  },
+  "kartingSchool": {
+    "title": "Karting School",
+    "lead": "A dedicated path for kids and teens, designed to enter karting the right way: gradual onboarding, driving technique, good habits and steady progression.\nFrom karting school to the first races, we support drivers and families with a clear method, realistic goals and track presence.",
+    "points": [
+      "Start young and progress by age and category",
+      "Training, technique and a “race after race” mindset",
+      "Competition support with dedicated assistance"
+    ],
+    "tipLabel": "Guided path",
+    "tipText": "Every driver has different timing: we build a tailored path, keeping consistency and peace of mind for both driver and family.",
+    "prev": "Previous slide",
+    "next": "Next slide",
+    "dotsLabel": "Select a photo",
+    "goTo": "Go to photo {index}",
+    "carouselLabel": "Karting school photo gallery",
+    "swipeHint": "Swipe"
+  }
+},
    "Footer": {
     "ariaFooter": "Site footer",
     "ariaSocial": "Social links",

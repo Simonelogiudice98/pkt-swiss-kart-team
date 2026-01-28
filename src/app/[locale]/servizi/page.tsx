@@ -1,5 +1,5 @@
-export default function Servizi() {
-  return (
-    <div></div>
-  );
+import ServicesPage from "@/components/home/servizi/ServicesPage/ServicesPage";
+
+export default function Page() {
+  return <ServicesPage />;
 }
