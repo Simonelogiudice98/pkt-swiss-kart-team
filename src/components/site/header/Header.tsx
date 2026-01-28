@@ -1,13 +1,12 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import Slide from "@mui/material/Slide";
-import type { TransitionProps } from "@mui/material/transitions";
-import { useRouter } from "next/navigation";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -16,17 +15,20 @@ import Stack from "@mui/material/Stack";
 import Dialog from "@mui/material/Dialog";
 import Typography from "@mui/material/Typography";
 import ButtonBase from "@mui/material/ButtonBase";
-import Image from "next/image";
+import Slide from "@mui/material/Slide";
+import type { TransitionProps } from "@mui/material/transitions";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
-import * as React from "react";
+
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { locales, type Locale } from "@/i18n";
-import { SocialLinks } from "@/types/types";
+import type { SocialLinks } from "@/types/types";
 
 function isLocale(x: string): x is Locale {
   return (locales as readonly string[]).includes(x);
@@ -34,20 +36,22 @@ function isLocale(x: string): x is Locale {
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement },
-  ref: React.Ref<unknown>,
+  ref: React.Ref<unknown>
 ) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-export default function Header({}: { socials?: SocialLinks }) {
+export default function Header({ socials }: { socials?: SocialLinks }) {
   const t = useTranslations("Nav");
   const pathname = usePathname();
   const router = useRouter();
+
   const segments = pathname.split("/").filter(Boolean);
   const first = segments[0] ?? "";
   const locale: Locale = isLocale(first) ? first : "it";
 
   const [open, setOpen] = useState(false);
+
   const menuBtnRef = React.useRef<HTMLButtonElement | null>(null);
   const closeBtnRef = React.useRef<HTMLButtonElement | null>(null);
 
@@ -63,10 +67,16 @@ export default function Header({}: { socials?: SocialLinks }) {
       { href: `/${locale}/piloti-gare`, label: t("driversRaces") },
       { href: `/${locale}/contatti`, label: t("contact") },
     ],
-    [locale, t],
+    [locale, t]
   );
 
   const currentPath = pathname.replace(/\/$/, "");
+
+  // Se vuoi usare socials dinamici, qui puoi mappare fallback
+  const instagram = socials?.instagram ?? "https://www.instagram.com/_pktswisskartteam_?igsh=MXA3ZDV5MmlsNHlwMw==";
+  const facebook = socials?.facebook ?? "/";
+  const tiktok = socials?.tiktok ?? "/";
+  const whatsapp = socials?.whatsapp ?? "/";
 
   return (
     <>
@@ -91,11 +101,9 @@ export default function Header({}: { socials?: SocialLinks }) {
             minHeight: { xs: 64, md: 72 },
           }}
         >
-          <Link
-            href={`/${locale}`}
-            style={{ display: "inline-flex", alignItems: "center" }}
-          >
-            <Box sx={{ position: "relative", width: 180, height: 60 }}>
+          <Link href={`/${locale}`} style={{ display: "inline-flex", alignItems: "center" }}>
+            {/* Logo: container + fill per evitare warning aspect ratio */}
+            <Box sx={{ position: "relative", width: { xs: 140, md: 180 }, height: { xs: 44, md: 60 } }}>
               <Image
                 src="/images/pkt_logo.svg"
                 alt="PKT Swiss Kart Team"
@@ -111,90 +119,53 @@ export default function Header({}: { socials?: SocialLinks }) {
 
           <Box sx={{ flex: 1 }} />
 
-          <Stack
-            direction="row"
-            spacing={1}
-            alignItems="center"
-            sx={{ display: { xs: "none", md: "flex" } }}
-          >
-            <IconButton
-              aria-label="Instagram"
-              color="inherit"
-              href="https://www.instagram.com/_pktswisskartteam_?igsh=MXA3ZDV5MmlsNHlwMw=="
-              target="_blank"
-            >
+          {/* Desktop */}
+          <Stack direction="row" spacing={1} alignItems="center" sx={{ display: { xs: "none", md: "flex" } }}>
+            <IconButton aria-label="Instagram" color="inherit" href={instagram} target="_blank">
               <InstagramIcon />
             </IconButton>
-            <IconButton
-              aria-label="Facebook"
-              color="inherit"
-              href="/"
-              target="_blank"
-            >
+            <IconButton aria-label="Facebook" color="inherit" href={facebook} target="_blank">
               <FacebookIcon />
             </IconButton>
-            <IconButton
-              aria-label="TikTok"
-              color="inherit"
-              href="/"
-              target="_blank"
-            >
+            <IconButton aria-label="TikTok" color="inherit" href={tiktok} target="_blank">
               <MusicNoteIcon />
             </IconButton>
-            <IconButton
-              aria-label="WhatsApp"
-              color="inherit"
-              href="/"
-              target="_blank"
-            >
+            <IconButton aria-label="WhatsApp" color="inherit" href={whatsapp} target="_blank">
               <WhatsAppIcon />
             </IconButton>
 
             <LocaleSwitcher />
 
-            <IconButton
-              aria-label="Menu"
-              color="inherit"
-              onClick={() => setOpen(true)}
-              ref={menuBtnRef}
-            >
+            <IconButton aria-label="Menu" color="inherit" onClick={() => setOpen(true)} ref={menuBtnRef}>
               <MenuIcon />
             </IconButton>
           </Stack>
-          <Stack
-            direction="row"
-            spacing={1}
-            alignItems="center"
-            sx={{ display: { xs: "flex", md: "none" } }}
-          >
-            <LocaleSwitcher />
 
-            <IconButton
-              aria-label="Menu"
-              color="inherit"
-              onClick={() => setOpen(true)}
-              ref={menuBtnRef}
-            >
+          {/* Mobile */}
+          <Stack direction="row" spacing={1} alignItems="center" sx={{ display: { xs: "flex", md: "none" } }}>
+            <LocaleSwitcher />
+            <IconButton aria-label="Menu" color="inherit" onClick={() => setOpen(true)} ref={menuBtnRef}>
               <MenuIcon />
             </IconButton>
           </Stack>
         </Toolbar>
       </AppBar>
+
+      {/* Spacer sotto appbar */}
       <Box sx={{ height: { xs: 64, md: 72 } }} />
+
       <Dialog
-        disableRestoreFocus
         fullScreen
         open={open}
         onClose={() => setOpen(false)}
-        slots={{
-          transition: Transition,
-        }}
+        disableRestoreFocus
+        slots={{ transition: Transition }}
         slotProps={{
-          paper: {
-            sx: {
-              background: "transparent",
-            },
+          transition: {
+            onEntered: () => closeBtnRef.current?.focus(),
+            onExited: () => menuBtnRef.current?.focus(),
           },
+          paper: { sx: { background: "transparent" } },
         }}
       >
         <Box
@@ -205,10 +176,10 @@ export default function Header({}: { socials?: SocialLinks }) {
             background:
               "radial-gradient(700px 260px at 120px 70px, rgba(255,255,255,0.18), transparent 60%)," +
               "radial-gradient(1000px 500px at 20% 0%, rgba(11,42,111,0.60), rgba(10,12,16,0.90))",
-
             backdropFilter: "blur(10px)",
           }}
         >
+          {/* Accent bar */}
           <Box
             sx={{
               position: "absolute",
@@ -216,12 +187,12 @@ export default function Header({}: { socials?: SocialLinks }) {
               top: 0,
               width: 5,
               height: "100%",
-              background:
-                "linear-gradient(180deg, rgba(255,210,0,1), rgba(229,57,53,1))",
+              background: "linear-gradient(180deg, rgba(255,210,0,1), rgba(229,57,53,1))",
               opacity: 0.9,
             }}
           />
 
+          {/* Noise */}
           <Box
             sx={{
               position: "absolute",
@@ -233,53 +204,28 @@ export default function Header({}: { socials?: SocialLinks }) {
             }}
           />
 
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              px: 2,
-              py: 1.5,
-            }}
-          >
-            <Link
-              href={`/${locale}`}
-              onClick={() => setOpen(false)}
-              style={{ display: "inline-flex" }}
-            >
-              <Image
-                src="/images/pkt_logo.svg"
-                alt="PKT Swiss Kart Team"
-                width={180}
-                height={60}
-                priority
-                style={{ filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))" }}
-              />
+          {/* Top row dialog */}
+          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: 2, py: 1.5 }}>
+            <Link href={`/${locale}`} onClick={() => setOpen(false)} style={{ display: "inline-flex" }}>
+              <Box sx={{ position: "relative", width: 180, height: 60 }}>
+                <Image
+                  src="/images/pkt_logo.svg"
+                  alt="PKT Swiss Kart Team"
+                  fill
+                  priority
+                  style={{ objectFit: "contain", filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))" }}
+                />
+              </Box>
             </Link>
 
             <Stack direction="row" spacing={1} alignItems="center">
-              <IconButton
-                aria-label="Instagram"
-                color="inherit"
-                href="/"
-                target="_blank"
-              >
+              <IconButton aria-label="Instagram" color="inherit" href={instagram} target="_blank">
                 <InstagramIcon />
               </IconButton>
-              <IconButton
-                aria-label="Facebook"
-                color="inherit"
-                href="/"
-                target="_blank"
-              >
+              <IconButton aria-label="Facebook" color="inherit" href={facebook} target="_blank">
                 <FacebookIcon />
               </IconButton>
-              <IconButton
-                aria-label="TikTok"
-                color="inherit"
-                href="/"
-                target="_blank"
-              >
+              <IconButton aria-label="TikTok" color="inherit" href={tiktok} target="_blank">
                 <MusicNoteIcon />
               </IconButton>
 
@@ -294,14 +240,8 @@ export default function Header({}: { socials?: SocialLinks }) {
             </Stack>
           </Box>
 
-          <Box
-            sx={{
-              height: "calc(100% - 72px)",
-              display: "grid",
-              placeItems: "center",
-              px: 2,
-            }}
-          >
+          {/* Menu links */}
+          <Box sx={{ height: "calc(100% - 72px)", display: "grid", placeItems: "center", px: 2 }}>
             <Stack spacing={1.0} sx={{ width: "min(520px, 92vw)" }}>
               {links.map((x) => {
                 const active = currentPath === x.href.replace(/\/$/, "");
@@ -328,9 +268,7 @@ export default function Header({}: { socials?: SocialLinks }) {
                         letterSpacing: 3,
                         textTransform: "uppercase",
                         fontSize: { xs: 18, sm: 22 },
-                        color: active
-                          ? "secondary.main"
-                          : "rgba(255,255,255,0.92)",
+                        color: active ? "secondary.main" : "rgba(255,255,255,0.92)",
                         display: "inline-block",
                         position: "relative",
                         pb: 0.5,
@@ -341,8 +279,7 @@ export default function Header({}: { socials?: SocialLinks }) {
                           bottom: 0,
                           width: active ? "52%" : "0%",
                           height: 2,
-                          background:
-                            "linear-gradient(90deg, #ffd200, #e53935)",
+                          background: "linear-gradient(90deg, #ffd200, #e53935)",
                           transform: "translateX(-50%)",
                           transition: "width 160ms ease",
                         },

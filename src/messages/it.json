@@ -77,10 +77,10 @@
       }
     ]
   },
-     "partners": {
-    "title": "Partner",
-    "subtitle": "Sponsor e partner che supportano il team.",
-    "items": {
+  "partners": {
+  "title": "Partners",
+  "subtitle": "Sponsor e partner che supportano il team.",
+  "items": {
       "rotax": { "name": "Rotax" },
       "iame": { "name": "IAME" },
       "crg": { "name": "CRG" },
