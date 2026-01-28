@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Box, CircularProgress } from "@mui/material";
 import { useTranslations } from "next-intl";
 
 import PilotCard, { Pilot } from "../PilotCard/PilotCard";
@@ -27,6 +27,7 @@ export default function DriversSection() {
 
   const [pilots, setPilots] = React.useState<Pilot[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
+  const [imagesLoading, setImagesLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
@@ -38,12 +39,12 @@ export default function DriversSection() {
         setError(null);
 
         const res = await fetch("/api/pilots", { cache: "no-store" });
-        
         if (!res.ok) throw new Error(`API error: ${res.status}`);
 
         const json: unknown = await res.json();
-        if (!isPilotApiArray(json))
+        if (!isPilotApiArray(json)) {
           throw new Error("Formato risposta /api/pilots non valido");
+        }
 
         const mapped: Pilot[] = json.map((x) => ({
           id: x.id,
@@ -51,13 +52,11 @@ export default function DriversSection() {
           category: "DRIVER",
           since: new Date().getFullYear(),
           photoUrl: x.photoFileId ? `/api/drive-image/${x.photoFileId}` : undefined,
-
-        }));        
+        }));
 
         if (alive) setPilots(mapped);
       } catch (e: unknown) {
-        const msg =
-          e instanceof Error ? e.message : "Errore nel caricamento piloti";
+        const msg = e instanceof Error ? e.message : "Errore nel caricamento piloti";
         if (alive) setError(msg);
       } finally {
         if (alive) setLoading(false);
@@ -69,6 +68,51 @@ export default function DriversSection() {
       alive = false;
     };
   }, []);
+
+  React.useEffect(() => {
+    if (loading) return; 
+    if (pilots.length === 0) {
+      setImagesLoading(false);
+      return;
+    }
+
+    const urls = Array.from(
+      new Set(
+        pilots
+          .map((p) => p.photoUrl)
+          .filter((u): u is string => typeof u === "string" && u.length > 0)
+      )
+    );
+
+    if (urls.length === 0) {
+      setImagesLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+    setImagesLoading(true);
+
+    const preload = (src: string) =>
+      new Promise<void>((resolve) => {
+        const img = new window.Image();
+        img.onload = () => resolve();
+        img.onerror = () => resolve(); 
+        img.src = src;
+      });
+
+    const timeout = new Promise<void>((resolve) => window.setTimeout(resolve, 6000));
+
+    Promise.race([Promise.all(urls.map(preload)).then(() => undefined), timeout]).then(() => {
+      if (!cancelled) setImagesLoading(false);
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [loading, pilots]);
+
+  const gridIsLoading = loading || imagesLoading;
+  const skeletonCount = loading ? SKELETON_COUNT : Math.max(pilots.length, SKELETON_COUNT);
 
   return (
     <section className={s.section} id="piloti">
@@ -93,18 +137,18 @@ export default function DriversSection() {
           </div>
         )}
 
+        {!loading && imagesLoading && (
+          <Box className={s.imagesLoaderRow} aria-live="polite">
+            <CircularProgress size={18} />
+            <span className={s.imagesLoaderText}>Caricamento immagini…</span>
+          </Box>
+        )}
+
         <Grid container spacing={3}>
-          {loading
-            ? Array.from({ length: SKELETON_COUNT }).map((_, idx) => (
+          {gridIsLoading
+            ? Array.from({ length: skeletonCount }).map((_, idx) => (
                 <Grid key={`sk-${idx}`} size={{ xs: 12, sm: 6, md: 4 }}>
-                  <div
-                    style={{
-                      height: 360,
-                      borderRadius: 18,
-                      border: "1px solid rgba(255,255,255,0.10)",
-                      background: "rgba(10,12,16,0.55)",
-                    }}
-                  />
+                  <div className={s.skeletonCard} />
                 </Grid>
               ))
             : pilots.map((p) => (

@@ -148,3 +148,47 @@
     width: 140px;
   }
 }
+.imagesLoaderRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+}
+
+.imagesLoaderText {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78);
+}
+
+.skeletonCard {
+  height: 360px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(10,12,16,0.55);
+  overflow: hidden;
+  position: relative;
+}
+
+.skeletonCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 260px at 50% 40%, rgba(255,255,255,0.06), rgba(255,255,255,0.02) 55%, rgba(0,0,0,0) 70%),
+    linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+  background-size: auto, 220% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 0, -220% 0; }
+}
