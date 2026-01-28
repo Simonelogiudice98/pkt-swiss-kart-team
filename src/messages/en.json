@@ -148,7 +148,8 @@
     "dotsLabel": "Select a photo",
     "goTo": "Go to photo {index}",
     "carouselLabel": "Karting school photo gallery",
-    "swipeHint": "Swipe"
+    "swipeHint": "Swipe",
+    "imgAlt": "Photo {index}"
   }
 },
    "Footer": {

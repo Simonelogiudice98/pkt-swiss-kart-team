@@ -148,7 +148,8 @@
     "dotsLabel": "Seleziona una foto",
     "goTo": "Vai alla foto {index}",
     "carouselLabel": "Galleria foto scuola karting",
-    "swipeHint": "Scorri"
+    "swipeHint": "Scorri",
+    "imgAlt": "Foto {index}"
   }
 },
   "Footer": {

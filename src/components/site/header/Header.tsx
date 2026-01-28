@@ -54,6 +54,8 @@ export default function Header({}: { socials?: SocialLinks }) {
   const locale: Locale = isLocale(first) ? first : "it";
 
   const [open, setOpen] = useState(false);
+  const menuBtnRef = React.useRef<HTMLButtonElement | null>(null);
+  const closeBtnRef = React.useRef<HTMLButtonElement | null>(null);
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -99,18 +101,18 @@ export default function Header({}: { socials?: SocialLinks }) {
             href={`/${locale}`}
             style={{ display: "inline-flex", alignItems: "center" }}
           >
-            <Image
-              src="/images/pkt_logo.svg"
-              alt="PKT Swiss Kart Team"
-              width={180}
-              height={60}
-              priority
-              style={{
-                height: "auto",
-                width: "clamp(120px, 26vw, 180px)",
-                filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))",
-              }}
-            />
+            <Box sx={{ position: "relative", width: 180, height: 60 }}>
+              <Image
+                src="/images/pkt_logo.svg"
+                alt="PKT Swiss Kart Team"
+                fill
+                priority
+                style={{
+                  objectFit: "contain",
+                  filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))",
+                }}
+              />
+            </Box>
           </Link>
 
           <Box sx={{ flex: 1 }} />
@@ -160,6 +162,7 @@ export default function Header({}: { socials?: SocialLinks }) {
               aria-label="Menu"
               color="inherit"
               onClick={() => setOpen(true)}
+              ref={menuBtnRef}
             >
               <MenuIcon />
             </IconButton>
@@ -176,6 +179,7 @@ export default function Header({}: { socials?: SocialLinks }) {
               aria-label="Menu"
               color="inherit"
               onClick={() => setOpen(true)}
+              ref={menuBtnRef}
             >
               <MenuIcon />
             </IconButton>
@@ -184,13 +188,18 @@ export default function Header({}: { socials?: SocialLinks }) {
       </AppBar>
       <Box sx={{ height: { xs: 64, md: 72 } }} />
       <Dialog
+        disableRestoreFocus
         fullScreen
         open={open}
         onClose={() => setOpen(false)}
-        TransitionComponent={Transition}
-        PaperProps={{
-          sx: {
-            background: "transparent",
+        slots={{
+          transition: Transition,
+        }}
+        slotProps={{
+          paper: {
+            sx: {
+              background: "transparent",
+            },
           },
         }}
       >
@@ -284,6 +293,7 @@ export default function Header({}: { socials?: SocialLinks }) {
                 aria-label="Close menu"
                 color="inherit"
                 onClick={() => setOpen(false)}
+                ref={closeBtnRef}
               >
                 <CloseIcon />
               </IconButton>

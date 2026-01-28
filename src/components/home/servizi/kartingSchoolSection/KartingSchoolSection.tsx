@@ -10,43 +10,42 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-
 import s from "./KartingSchoolSection.module.scss";
 
-const MOCK_IMAGES = [
-  { src: "/images/hero-kart.jpg", alt: "Kart in pista" },
-  { src: "/images/founder.jpg", alt: "Team" },
-  { src: "/images/about-1.jpg", alt: "Allenamento" },
-];
+const IMAGES = [
+  { src: "/images/school/school1.jpg", alt: "Foto 1" },
+  { src: "/images/school/school2.jpg", alt: "Foto 2" },
+  { src: "/images/school/school3.jpg", alt: "Foto 3" },
+] as const;
 
 export default function KartingSchoolSection() {
   const t = useTranslations("Services.kartingSchool");
+
   const [idx, setIdx] = React.useState(0);
   const [isPaused, setIsPaused] = React.useState(false);
 
+  const count = IMAGES.length;
+
   const prev = React.useCallback(
-    () => setIdx((v) => (v === 0 ? MOCK_IMAGES.length - 1 : v - 1)),
-    []
+    () => setIdx((v) => (v === 0 ? count - 1 : v - 1)),
+    [count],
   );
   const next = React.useCallback(
-    () => setIdx((v) => (v === MOCK_IMAGES.length - 1 ? 0 : v + 1)),
-    []
+    () => setIdx((v) => (v === count - 1 ? 0 : v + 1)),
+    [count],
   );
 
-  // Optional: autoplay morbido (si ferma se hover/focus)
   React.useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || count <= 1) return;
     const id = window.setInterval(() => next(), 6500);
     return () => window.clearInterval(id);
-  }, [isPaused, next]);
+  }, [isPaused, next, count]);
 
-  // Tastiera: frecce sx/dx quando il frame è focusato
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowLeft") prev();
     if (e.key === "ArrowRight") next();
   };
 
-  // Swipe su mobile
   const startX = React.useRef<number | null>(null);
   const onPointerDown = (e: React.PointerEvent) => {
     startX.current = e.clientX;
@@ -65,9 +64,6 @@ export default function KartingSchoolSection() {
     { Icon: PsychologyIcon, text: t("points.1") },
     { Icon: GroupsIcon, text: t("points.2") },
   ];
-
-  const active = MOCK_IMAGES[idx];
-
   return (
     <section className={s.section} id="scuola-karting">
       <div className={s.layout}>
@@ -78,6 +74,7 @@ export default function KartingSchoolSection() {
               onClick={prev}
               aria-label={t("prev")}
               type="button"
+              disabled={count <= 1}
             >
               <ChevronLeftIcon />
             </button>
@@ -96,29 +93,27 @@ export default function KartingSchoolSection() {
               onPointerDown={onPointerDown}
               onPointerUp={onPointerUp}
             >
-              {/* Cross-fade (premium) */}
               <div className={s.fadeStage}>
                 <Image
-                  key={active.src}
-                  src={active.src}
-                  alt={active.alt}
+                  key={IMAGES[idx].src}
+                  src={IMAGES[idx].src}
+                  alt={t("imgAlt", { index: idx + 1 })}
                   fill
-                  sizes="(max-width: 900px) 100vw, 600px"
+                  sizes="(max-width: 900px) 92vw, 600px"
                   className={s.img}
                   priority={idx === 0}
+                  quality={80}
                 />
               </div>
 
               <div className={s.slideOverlay} />
 
-              {/* Counter badge */}
               <div className={s.counter}>
                 <span className={s.counterAccent}>{idx + 1}</span>
                 <span className={s.counterSep}>/</span>
-                <span className={s.counterTotal}>{MOCK_IMAGES.length}</span>
+                <span className={s.counterTotal}>{count}</span>
               </div>
 
-              {/* small hint on mobile */}
               <div className={s.swipeHint}>{t("swipeHint")}</div>
             </div>
 
@@ -127,13 +122,14 @@ export default function KartingSchoolSection() {
               onClick={next}
               aria-label={t("next")}
               type="button"
+              disabled={count <= 1}
             >
               <ChevronRightIcon />
             </button>
           </div>
 
           <div className={s.dots} aria-label={t("dotsLabel")}>
-            {MOCK_IMAGES.map((_, i) => (
+            {IMAGES.map((_, i) => (
               <button
                 key={i}
                 className={`${s.dot} ${i === idx ? s.dotActive : ""}`}

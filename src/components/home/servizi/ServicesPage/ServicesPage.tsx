@@ -51,7 +51,6 @@ export default function ServicesPage() {
           <div className={s.sectionRule} />
         </header>
 
-        {/* NUOVO: riempie spazio e separa meglio header -> sezioni */}
         <section className={s.highlights} aria-label={t("highlightsAria")}>
           {highlights.map(({ Icon, title, text }, idx) => (
             <div key={idx} className={s.highlightCard}>

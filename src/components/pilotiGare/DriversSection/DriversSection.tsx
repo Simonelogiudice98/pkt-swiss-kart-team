@@ -44,7 +44,6 @@ export default function DriversSection() {
         setError(null);
 
         const res = await fetch("/api/pilots", { cache: "no-store" });
-        console.log("res",res);
         
         if (!res.ok) throw new Error(`API error: ${res.status}`);
 
@@ -59,10 +58,7 @@ export default function DriversSection() {
           since: new Date().getFullYear(),
           photoUrl: x.photoFileId ? `/api/drive-image/${x.photoFileId}` : undefined,
 
-        }));
-
-        console.log("mapped",mapped);
-        
+        }));        
 
         if (alive) setPilots(mapped);
       } catch (e: unknown) {
