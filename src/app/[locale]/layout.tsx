@@ -6,6 +6,15 @@ import Header from "@/components/site/header/Header";
 import Footer from "@/components/site/footer/Footer";
 import Providers from "@/components/Providers";
 
+import { Cambo } from "next/font/google";
+
+const cambo = Cambo({
+  weight: ["400"],       
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-cambo",
+});
+
 export default async function LocaleLayout({
   children,
   params,
@@ -19,7 +28,7 @@ export default async function LocaleLayout({
   const messages = (await import(`@/messages/${locale}.json`)).default;
 
   return (
-    <html lang={locale} >
+    <html lang={locale} className={cambo.variable}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>
