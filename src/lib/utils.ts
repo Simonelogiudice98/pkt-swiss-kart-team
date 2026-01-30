@@ -6,7 +6,7 @@ export const socials:SocialLinks = {
     facebook:"https://www.facebook.com/share/185YcowfMS/",
     tiktok:"https://www.tiktok.com/@pktswisskartteam?_r=1&_t=ZN-93VR0CgATx8",
     whatsapp:`https://api.whatsapp.com/send?phone=41792096881&text=${encodeURIComponent("Ciao! Vorrei informazioni sui vostri servizi.")}`,
-    legalSeat: "Sede legale: …",
+    legalSeat: "Sede legale: Via del Sole 8, 6963 PREGASSONA (CH)",
     email: "pkt.kartteam@gmail.com",
 }
 
