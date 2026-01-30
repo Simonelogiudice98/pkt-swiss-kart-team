@@ -1,7 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/i18n";
-
 import Header from "@/components/site/header/Header";
 import Footer from "@/components/site/footer/Footer";
 import Providers from "@/components/Providers";
@@ -12,7 +11,7 @@ const cambo = Cambo({
   weight: ["400"],       
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-cambo",
+  variable: "--font-body",
 });
 
 export default async function LocaleLayout({

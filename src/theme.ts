@@ -1,19 +1,33 @@
 import { createTheme } from "@mui/material/styles";
 
+const titleFont = "system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif";
+const bodyFont = "var(--font-body), serif";
+
 export const theme = createTheme({
   palette: {
     mode: "dark",
     primary: { main: "#0b2a6f" },
     secondary: { main: "#ffd200" },
     error: { main: "#e53935" },
-    background: {
-      default: "#0a0c10",
-      paper: "rgba(10, 12, 16, 0.92)",
-    },
+    background: { default: "#0a0c10", paper: "rgba(10, 12, 16, 0.92)" },
   },
   shape: { borderRadius: 14 },
   typography: {
-    fontFamily:
-      "var(--font-cambo), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
+    fontFamily: bodyFont,   
+    button: { fontFamily: titleFont },
+    h1: { fontFamily: titleFont },
+    h2: { fontFamily: titleFont },
+    h3: { fontFamily: titleFont },
+    h4: { fontFamily: titleFont },
+    h5: { fontFamily: titleFont },
+    h6: { fontFamily: titleFont },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: { fontFamily: bodyFont },
+        "h1,h2,h3,h4,h5,h6": { fontFamily: titleFont }, 
+      },
+    },
   },
 });
