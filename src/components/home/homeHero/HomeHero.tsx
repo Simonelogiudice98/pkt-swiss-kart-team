@@ -35,10 +35,6 @@ export default function HomeHero() {
 
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.kickerRow}>
-            <span className={styles.kickerDot} aria-hidden />
-            <span className={styles.kicker}>{t("kicker")}</span>
-          </div>
 
           <h1 className={styles.heroTitle}>{t("title")}</h1>
           <p className={styles.heroSubtitle}>{t("subtitle")}</p>
