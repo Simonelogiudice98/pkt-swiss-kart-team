@@ -12,10 +12,10 @@ const items = [
     logoSrc: "/images/partners/rotax.svg",
   },
   {
-    key: "iame",
-    name: "IAME",
-    href: "https://iameengines.com/",
-    logoSrc: "/images/partners/iame.svg",
+    key: "rgm",
+    name: "RGM Tech",
+    href: "https://www.rgmtech.it/",
+    logoSrc: "/images/partners/RGM.png",
   },
   {
     key: "crg",

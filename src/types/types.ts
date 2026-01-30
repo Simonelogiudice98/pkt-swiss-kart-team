@@ -52,10 +52,12 @@ export interface FooterProps {
 };
 
 export interface SocialLinks {
-  instagram?: string;
-  facebook?: string;
-  tiktok?: string;
-  whatsapp?: string;
+  instagram: string;
+  facebook: string;
+  tiktok: string;
+  whatsapp: string;
+  legalSeat: string;
+  email: string;
 };
 
 export interface PilotDTO {

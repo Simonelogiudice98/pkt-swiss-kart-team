@@ -18,7 +18,6 @@ import ButtonBase from "@mui/material/ButtonBase";
 import Slide from "@mui/material/Slide";
 import type { TransitionProps } from "@mui/material/transitions";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
-
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -28,7 +27,7 @@ import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import s from "./Header.module.scss";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { locales, type Locale } from "@/i18n";
-import type { SocialLinks } from "@/types/types";
+import { socials } from "@/lib/utils";
 
 function isLocale(x: string): x is Locale {
   return (locales as readonly string[]).includes(x);
@@ -41,7 +40,7 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-export default function Header({ socials }: { socials?: SocialLinks }) {
+export default function Header() {
   const t = useTranslations("Nav");
   const pathname = usePathname();
   const router = useRouter();
@@ -71,13 +70,6 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
   );
 
   const currentPath = pathname.replace(/\/$/, "");
-
-  const instagram =
-    socials?.instagram ??
-    "https://www.instagram.com/_pktswisskartteam_?igsh=MXA3ZDV5MmlsNHlwMw==";
-  const facebook = socials?.facebook ?? "/";
-  const tiktok = socials?.tiktok ?? "/";
-  const whatsapp = socials?.whatsapp ?? "/";
 
   return (
     <>
@@ -138,7 +130,7 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
             <div className={s.socialRow} aria-label="Social">
               <a
                 className={`${s.socialBtn} ${s.ig}`}
-                href={instagram}
+                href={socials.instagram}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -149,7 +141,7 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
 
               <a
                 className={`${s.socialBtn} ${s.fb}`}
-                href={facebook}
+                href={socials.facebook}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
@@ -160,7 +152,7 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
 
               <a
                 className={`${s.socialBtn} ${s.tk}`}
-                href={tiktok}
+                href={socials.tiktok}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="TikTok"
@@ -171,7 +163,7 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
 
               <a
                 className={`${s.socialBtn} ${s.wa}`}
-                href={whatsapp}
+                href={socials.whatsapp}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
@@ -296,7 +288,7 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
               <div className={s.socialRow} aria-label="Social">
                 <a
                   className={`${s.socialBtn} ${s.ig}`}
-                  href={instagram}
+                  href={socials.instagram}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
@@ -305,7 +297,7 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
                 </a>
                 <a
                   className={`${s.socialBtn} ${s.fb}`}
-                  href={facebook}
+                  href={socials.facebook}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
@@ -314,7 +306,7 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
                 </a>
                 <a
                   className={`${s.socialBtn} ${s.tk}`}
-                  href={tiktok}
+                  href={socials.tiktok}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="TikTok"

@@ -6,22 +6,13 @@ import Link from "next/link";
 
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TikTokIcon from "@mui/icons-material/MusicNote"; 
+import TikTokIcon from "@mui/icons-material/MusicNote";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PlaceIcon from "@mui/icons-material/Place";
-import { FooterProps } from "@/types/types";
+import { mailHref, socials } from "@/lib/utils";
 
-export default function Footer({
-  legalSeat = "Sede legale: …",
-  email = "info@pkt-kart.ch",
-  socials = {
-    instagram: "#",
-    facebook: "#",
-    tiktok: "#",
-    whatsapp: "#",
-  },
-}: FooterProps) {
+export default function Footer() {
   const t = useTranslations("Footer");
   const year = new Date().getFullYear();
 
@@ -39,13 +30,16 @@ export default function Footer({
           <div className={styles.infoList}>
             <div className={styles.infoItem}>
               <PlaceIcon className={styles.infoIcon} fontSize="small" />
-              <span className={styles.infoText}>{legalSeat}</span>
+              <span className={styles.infoText}>{socials.legalSeat}</span>
             </div>
 
             <div className={styles.infoItem}>
               <MailOutlineIcon className={styles.infoIcon} fontSize="small" />
-              <a className={styles.link} href={`mailto:${email}`}>
-                {email}
+              <a
+                className={styles.link}
+                href={mailHref}
+              >
+                {socials.email}
               </a>
             </div>
           </div>
