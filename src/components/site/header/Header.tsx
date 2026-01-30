@@ -25,7 +25,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
-
+import s from "./Header.module.scss";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { locales, type Locale } from "@/i18n";
 import type { SocialLinks } from "@/types/types";
@@ -36,7 +36,7 @@ function isLocale(x: string): x is Locale {
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement },
-  ref: React.Ref<unknown>
+  ref: React.Ref<unknown>,
 ) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
@@ -67,13 +67,14 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
       { href: `/${locale}/piloti-gare`, label: t("driversRaces") },
       { href: `/${locale}/contatti`, label: t("contact") },
     ],
-    [locale, t]
+    [locale, t],
   );
 
   const currentPath = pathname.replace(/\/$/, "");
 
-  // Se vuoi usare socials dinamici, qui puoi mappare fallback
-  const instagram = socials?.instagram ?? "https://www.instagram.com/_pktswisskartteam_?igsh=MXA3ZDV5MmlsNHlwMw==";
+  const instagram =
+    socials?.instagram ??
+    "https://www.instagram.com/_pktswisskartteam_?igsh=MXA3ZDV5MmlsNHlwMw==";
   const facebook = socials?.facebook ?? "/";
   const tiktok = socials?.tiktok ?? "/";
   const whatsapp = socials?.whatsapp ?? "/";
@@ -93,17 +94,28 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
         }}
       >
         <Toolbar
+          disableGutters
           sx={{
-            maxWidth: 1200,
             width: "100%",
-            mx: "auto",
-            px: 2,
+            px: { xs: 2, md: 3 },
             minHeight: { xs: 64, md: 72 },
+
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-          <Link href={`/${locale}`} style={{ display: "inline-flex", alignItems: "center" }}>
-            {/* Logo: container + fill per evitare warning aspect ratio */}
-            <Box sx={{ position: "relative", width: { xs: 140, md: 180 }, height: { xs: 44, md: 60 } }}>
+          <Link
+            href={`/${locale}`}
+            style={{ display: "inline-flex", alignItems: "center" }}
+          >
+            <Box
+              sx={{
+                position: "relative",
+                width: { xs: 140, md: 220 },
+                height: { xs: 44, md: 80 },
+              }}
+            >
               <Image
                 src="/images/pkt_logo.svg"
                 alt="PKT Swiss Kart Team"
@@ -117,41 +129,90 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
             </Box>
           </Link>
 
-          <Box sx={{ flex: 1 }} />
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            sx={{ display: { xs: "none", md: "flex" } }}
+          >
+            <div className={s.socialRow} aria-label="Social">
+              <a
+                className={`${s.socialBtn} ${s.ig}`}
+                href={instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <InstagramIcon fontSize="small" />
+              </a>
 
-          {/* Desktop */}
-          <Stack direction="row" spacing={1} alignItems="center" sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton aria-label="Instagram" color="inherit" href={instagram} target="_blank">
-              <InstagramIcon />
-            </IconButton>
-            <IconButton aria-label="Facebook" color="inherit" href={facebook} target="_blank">
-              <FacebookIcon />
-            </IconButton>
-            <IconButton aria-label="TikTok" color="inherit" href={tiktok} target="_blank">
-              <MusicNoteIcon />
-            </IconButton>
-            <IconButton aria-label="WhatsApp" color="inherit" href={whatsapp} target="_blank">
-              <WhatsAppIcon />
-            </IconButton>
+              <a
+                className={`${s.socialBtn} ${s.fb}`}
+                href={facebook}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+              >
+                <FacebookIcon fontSize="small" />
+              </a>
+
+              <a
+                className={`${s.socialBtn} ${s.tk}`}
+                href={tiktok}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="TikTok"
+                title="TikTok"
+              >
+                <MusicNoteIcon fontSize="small" />
+              </a>
+
+              <a
+                className={`${s.socialBtn} ${s.wa}`}
+                href={whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                title="WhatsApp"
+              >
+                <WhatsAppIcon fontSize="small" />
+              </a>
+            </div>
 
             <LocaleSwitcher />
 
-            <IconButton aria-label="Menu" color="inherit" onClick={() => setOpen(true)} ref={menuBtnRef}>
+            <IconButton
+              aria-label="Menu"
+              color="inherit"
+              onClick={() => setOpen(true)}
+              ref={menuBtnRef}
+            >
               <MenuIcon />
             </IconButton>
           </Stack>
 
           {/* Mobile */}
-          <Stack direction="row" spacing={1} alignItems="center" sx={{ display: { xs: "flex", md: "none" } }}>
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            sx={{ display: { xs: "flex", md: "none" } }}
+          >
             <LocaleSwitcher />
-            <IconButton aria-label="Menu" color="inherit" onClick={() => setOpen(true)} ref={menuBtnRef}>
+            <IconButton
+              aria-label="Menu"
+              color="inherit"
+              onClick={() => setOpen(true)}
+              ref={menuBtnRef}
+            >
               <MenuIcon />
             </IconButton>
           </Stack>
         </Toolbar>
       </AppBar>
 
-      {/* Spacer sotto appbar */}
       <Box sx={{ height: { xs: 64, md: 72 } }} />
 
       <Dialog
@@ -179,7 +240,6 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
             backdropFilter: "blur(10px)",
           }}
         >
-          {/* Accent bar */}
           <Box
             sx={{
               position: "absolute",
@@ -187,12 +247,12 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
               top: 0,
               width: 5,
               height: "100%",
-              background: "linear-gradient(180deg, rgba(255,210,0,1), rgba(229,57,53,1))",
+              background:
+                "linear-gradient(180deg, rgba(255,210,0,1), rgba(229,57,53,1))",
               opacity: 0.9,
             }}
           />
 
-          {/* Noise */}
           <Box
             sx={{
               position: "absolute",
@@ -204,30 +264,64 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
             }}
           />
 
-          {/* Top row dialog */}
-          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: 2, py: 1.5 }}>
-            <Link href={`/${locale}`} onClick={() => setOpen(false)} style={{ display: "inline-flex" }}>
-              <Box sx={{ position: "relative", width: 180, height: 60 }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              px: 2,
+              py: 1.5,
+            }}
+          >
+            <Link
+              href={`/${locale}`}
+              onClick={() => setOpen(false)}
+              style={{ display: "inline-flex" }}
+            >
+              <Box sx={{ position: "relative", width: 220, height: 80 }}>
                 <Image
                   src="/images/pkt_logo.svg"
                   alt="PKT Swiss Kart Team"
                   fill
                   priority
-                  style={{ objectFit: "contain", filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))" }}
+                  style={{
+                    objectFit: "contain",
+                    filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))",
+                  }}
                 />
               </Box>
             </Link>
 
             <Stack direction="row" spacing={1} alignItems="center">
-              <IconButton aria-label="Instagram" color="inherit" href={instagram} target="_blank">
-                <InstagramIcon />
-              </IconButton>
-              <IconButton aria-label="Facebook" color="inherit" href={facebook} target="_blank">
-                <FacebookIcon />
-              </IconButton>
-              <IconButton aria-label="TikTok" color="inherit" href={tiktok} target="_blank">
-                <MusicNoteIcon />
-              </IconButton>
+              <div className={s.socialRow} aria-label="Social">
+                <a
+                  className={`${s.socialBtn} ${s.ig}`}
+                  href={instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon fontSize="small" />
+                </a>
+                <a
+                  className={`${s.socialBtn} ${s.fb}`}
+                  href={facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon fontSize="small" />
+                </a>
+                <a
+                  className={`${s.socialBtn} ${s.tk}`}
+                  href={tiktok}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="TikTok"
+                >
+                  <MusicNoteIcon fontSize="small" />
+                </a>
+              </div>
 
               <IconButton
                 aria-label="Close menu"
@@ -240,8 +334,14 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
             </Stack>
           </Box>
 
-          {/* Menu links */}
-          <Box sx={{ height: "calc(100% - 72px)", display: "grid", placeItems: "center", px: 2 }}>
+          <Box
+            sx={{
+              height: "calc(100% - 72px)",
+              display: "grid",
+              placeItems: "center",
+              px: 2,
+            }}
+          >
             <Stack spacing={1.0} sx={{ width: "min(520px, 92vw)" }}>
               {links.map((x) => {
                 const active = currentPath === x.href.replace(/\/$/, "");
@@ -268,7 +368,9 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
                         letterSpacing: 3,
                         textTransform: "uppercase",
                         fontSize: { xs: 18, sm: 22 },
-                        color: active ? "secondary.main" : "rgba(255,255,255,0.92)",
+                        color: active
+                          ? "secondary.main"
+                          : "rgba(255,255,255,0.92)",
                         display: "inline-block",
                         position: "relative",
                         pb: 0.5,
@@ -279,7 +381,8 @@ export default function Header({ socials }: { socials?: SocialLinks }) {
                           bottom: 0,
                           width: active ? "52%" : "0%",
                           height: 2,
-                          background: "linear-gradient(90deg, #ffd200, #e53935)",
+                          background:
+                            "linear-gradient(90deg, #ffd200, #e53935)",
                           transform: "translateX(-50%)",
                           transition: "width 160ms ease",
                         },
