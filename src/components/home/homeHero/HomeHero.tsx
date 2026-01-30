@@ -22,7 +22,7 @@ export default function HomeHero() {
       <div className={styles.heroMedia} aria-hidden>
         <Image
           className={styles.heroImg}
-          src="/images/hero-kart.jpg"
+          src="/images/hero-kart.jpeg"
           alt=""
           fill
           priority
