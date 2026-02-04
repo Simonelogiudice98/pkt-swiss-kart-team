@@ -64,7 +64,6 @@ export default function Header() {
       { href: `/${locale}`, label: t("home") },
       { href: `/${locale}/servizi`, label: t("services") },
       { href: `/${locale}/piloti-gare`, label: t("driversRaces") },
-      { href: `/${locale}/contatti`, label: t("contact") },
     ],
     [locale, t],
   );
@@ -185,7 +184,6 @@ export default function Header() {
             </IconButton>
           </Stack>
 
-          {/* Mobile */}
           <Stack
             direction="row"
             spacing={1}

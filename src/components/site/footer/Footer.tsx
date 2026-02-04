@@ -100,9 +100,6 @@ export default function Footer() {
             <Link className={styles.navLink} href="/piloti-gare">
               {t("driversRaces")}
             </Link>
-            <Link className={styles.navLink} href="/contatti">
-              {t("contacts")}
-            </Link>
           </nav>
         </div>
       </div>

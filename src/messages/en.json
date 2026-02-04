@@ -11,40 +11,40 @@
     "ctaServices": "Explore services",
     "ctaDriversRaces": "Drivers & Races"
   },
- "About": {
-    "kicker": "About",
-    "title": "One team, one vision",
-    "lead": "We bring expertise, passion and full support to the track, so you can race without distractions. From karting school to competition, we guide every step of the journey.",
-    "points": [
-      "Full trackside and race-day support",
-      "A growth pathway for drivers and families",
-      "Preparation, organisation and method"
-    ],
-    "carouselLabel": "Photo gallery",
-    "swipeHint": "Swipe",
-    "badge": "Since 2018",
-    "prev": "Previous slide",
-    "next": "Next slide",
-    "dotsLabel": "Select a slide",
-    "goTo": "Go to slide {index}",
-    "slides": [
-      {
-        "alt": "Team at the track",
-        "title": "Trackside support",
-        "caption": "Consistent presence and technical support during tests and race weekends."
-      },
-      {
-        "alt": "Kart in action",
-        "title": "Driver development",
-        "caption": "Training and progression: from karting school to competition."
-      },
-      {
-        "alt": "Team briefing",
-        "title": "Preparation & method",
-        "caption": "Professional standards and attention to detail for consistent performance."
-      }
-    ]
-  },
+"About": {
+  "kicker": "About us",
+  "title": "One team, one vision",
+  "lead": "PKT was founded in 2016 and entered its first competitions in the KartSport Circuit championship. In just a few years, driven by growing demand and continuous development, the team evolved from an amateur spirit into a professional structure, stepping up the level of karting events and achieving notable results in the Easykart championship.\n\nIn recent seasons, thanks to the passion of its founder Stefano Matteuzzi and the commitment and dedication of the whole team, PKT has raced in multiple championships, expanding its know-how and building a solid organization ready for new competitive challenges.\n\nOur mission is to develop and train young drivers to face national and international races with professionalism and discipline. We work in synergy to offer our clients professionalism, quality, efficiency and elegance, supporting them in achieving their goals.",
+  "points": [
+    "Since 2016: steady growth and results on track",
+    "Development path for young drivers and families",
+    "Professionalism, quality, efficiency and elegance"
+  ],
+  "carouselLabel": "Photo gallery",
+  "swipeHint": "Swipe",
+  "badge": "Since 2016",
+  "prev": "Previous slide",
+  "next": "Next slide",
+  "dotsLabel": "Select a slide",
+  "goTo": "Go to slide {index}",
+  "slides": [
+    {
+      "alt": "Team at the track",
+      "title": "Trackside support",
+      "caption": "Constant presence and technical support during tests and race weekends."
+    },
+    {
+      "alt": "Kart in action",
+      "title": "Driver development",
+      "caption": "A growth journey: from karting school to national and international competitions."
+    },
+    {
+      "alt": "Team briefing",
+      "title": "Method & discipline",
+      "caption": "Organization, attention to detail and teamwork for consistent performance."
+    }
+  ]
+},
   "History": {
     "kicker": "History",
     "title": "Our story",
@@ -76,16 +76,18 @@
       }
     ]
   },
-  "partners": {
-    "title": "Partners",
-    "subtitle": "Sponsors and partners supporting the team.",
+    "partners": {
+    "partnersTitle": "Partners",
+    "supportersTitle": "Supporters",
     "items": {
-      "rotax": { "name": "Rotax" },
+      "stilo": { "name": "Stilo" },
       "rgm": { "name": "RGM Tech" },
-      "crg": { "name": "CRG" },
-      "vega": { "name": "Vega Tyres" },
-      "tonyKart": { "name": "Tony Kart" },
-      "birelart": { "name": "Birel ART" }
+      "afradiator": { "name": "AF Radiator" },
+      "iame": { "name": "IAME Motorsport" },
+      "winteler": { "name": "Winteler" },
+      "galetti": { "name": "Galetti Pneumatici" },
+      "finardi": { "name": "Finardi & Partners" },
+      "csp": { "name": "CSP" }
     }
   },
   "DriversRaces": {
@@ -110,7 +112,7 @@
   },
   "highlightsAria": "Key service highlights",
   "highlights": [
-    { "title": "Trackside assistance", "text": "Set-up, checks and operational support on race weekends." },
+    { "title": "Trackside assistance", "text": "Vehicle setup, spare parts, coaching, and race weekend management." },
     { "title": "Karting school", "text": "A guided path for kids and teens, from basics to first races." },
     { "title": "Progression", "text": "Method, realistic goals and steady improvement race after race." }
   ],
@@ -125,7 +127,7 @@
     "noteLabel": "Why it works",
     "noteText": "We reduce the organizational load and increase the quality of your track time: more focus, more continuity, more results.",
     "highlightTitle": "A worry-free weekend",
-    "highlightText": "We prepare what’s needed and assist you at every step: from arrival and checks to on-track management. The goal is simple: to have you racing in the best possible conditions.",
+    "highlightText": "We take care of everything and support you at every stage: perfectly organized equipment, 360° technical support, coaching with telemetry and video analysis, and a clear development path to help you grow and improve consistently—aiming for success at national and international level. The goal is simple: to put you on track in the best possible conditions.",
     "pill1": "Trackside",
     "pill2": "Set-up",
     "pill3": "Logistics",
@@ -139,7 +141,7 @@
     "lead": "A dedicated path for kids and teens, designed to enter karting the right way: gradual onboarding, driving technique, good habits and steady progression.\nFrom karting school to the first races, we support drivers and families with a clear method, realistic goals and track presence.",
     "points": [
       "Start young and progress by age and category",
-      "Training, technique and a “race after race” mindset",
+      "Training, technique, and a racer’s mindset.",
       "Competition support with dedicated assistance"
     ],
     "tipLabel": "Guided path",

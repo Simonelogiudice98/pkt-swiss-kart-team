@@ -30,6 +30,9 @@ export default function DriversSection() {
   const [imagesLoading, setImagesLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<string | null>(null);
 
+  const driveThumbUrl = (fileId: string, size = 800) =>
+  `https://lh3.googleusercontent.com/d/${fileId}=s${size}`;
+
   React.useEffect(() => {
     let alive = true;
 
@@ -51,7 +54,8 @@ export default function DriversSection() {
           name: x.name,
           category: "DRIVER",
           since: new Date().getFullYear(),
-          photoUrl: x.photoFileId ? `/api/drive-image/${x.photoFileId}` : undefined,
+          photoUrl: x.photoFileId ? driveThumbUrl(x.photoFileId, 800) : undefined,
+
         }));
 
         if (alive) setPilots(mapped);

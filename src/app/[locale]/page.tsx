@@ -4,43 +4,59 @@ import AboutSection from "@/components/home/aboutSection/AboutSection";
 import PartnersSection from "@/components/home/partnersSection/PartnersSection";
 import HistorySection from "@/components/home/historySection/HistorySection";
 
-const items = [
+const partners = [
   {
-    key: "rotax",
-    name: "Rotax",
-    href: "https://www.rotax-racing.com/",
-    logoSrc: "/images/partners/rotax.svg",
+    key: "stilo",
+    name: "Stilo",
+    href: "https://stilo.it",
+    logoSrc: "/images/partners/stilo.svg",
   },
   {
     key: "rgm",
     name: "RGM Tech",
-    href: "https://www.rgmtech.it/",
+    href: "https://www.rgmtech.it",
     logoSrc: "/images/partners/RGM.png",
   },
   {
-    key: "crg",
-    name: "CRG",
-    href: "https://kartcrg.com/?lang=en",
-    logoSrc: "/images/partners/crg.jpg",
+    key: "afradiator",
+    name: "AF Radiator",
+    href: "https://www.afradiator.it",
+    logoSrc: "/images/partners/afradiator.svg",
   },
   {
-    key: "vega",
-    name: "Vega Tyres",
-    href: "https://vegatyres.com/en/",
-    logoSrc: "/images/partners/vega.png",
+    key: "iame",
+    name: "IAME Motorsport",
+    href: "https://www.iame-motorsport.com",
+    logoSrc: "/images/partners/iame.svg",
+  },
+];
+
+const supporters = [
+  {
+    key: "winteler",
+    name: "Winteler",
+    href: "https://www.winteler.ch",
+    logoSrc: "/images/partners/winteler.svg",
   },
   {
-    key: "tonyKart",
-    name: "Tony Kart",
-    href: "https://www.tonykart.com/",
-    logoSrc: "/images/partners/tonyKart.png",
+    key: "galetti",
+    name: "Galetti Pneumatici",
+    href: "https://galettipneumatici.ch/",
+    logoSrc: "/images/partners/galetti.svg",
   },
   {
-    key: "birelart",
-    name: "Birel ART",
-    href: "https://www.birelart.com/",
-    logoSrc: "/images/partners/birel.png",
+    key: "finardi",
+    name: "Finardi",
+    href: "https://finardi.net/",
+    logoSrc: "/images/partners/finardi.svg",
   },
+  {
+    key: "csp",
+    name: "CSP",
+    href: "",
+    logoSrc: "/images/partners/CSP.svg",
+  },
+  
 ];
 
 export default function HomePage() {
@@ -52,9 +68,7 @@ export default function HomePage() {
 
       <HistorySection />
 
-      <PartnersSection
-        items={items}
-      />
+      <PartnersSection partners={partners} supporters={supporters} />
     </main>
   );
 }
