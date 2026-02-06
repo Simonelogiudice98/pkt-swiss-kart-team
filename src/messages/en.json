@@ -108,8 +108,9 @@
   "nav": {
     "ariaLabel": "Jump to a section",
     "assistance": "Assistance",
-    "school": "Karting School"
+    "kartingSchool": "Karting School"
   },
+  "imgAlt": "Photo {index}",
   "highlightsAria": "Key service highlights",
   "highlights": [
     { "title": "Trackside assistance", "text": "Vehicle setup, spare parts, coaching, and race weekend management." },
