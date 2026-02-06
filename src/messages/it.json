@@ -173,6 +173,74 @@
     "imgAlt": "Foto {index}"
   }
 },
+  "CookieBanner": {
+    "title": "Cookie",
+    "text": "Usiamo cookie tecnici necessari al funzionamento del sito. Se in futuro attiveremo cookie di analisi o marketing, potrai gestire le preferenze in qualsiasi momento.",
+    "accept": "Ok",
+    "learnMore": "Scopri di più"
+  },
+  "CookieNotice": {
+  "ariaLabel": "Informativa cookie",
+  "kicker": "Cookie",
+  "text": "Usiamo solo cookie tecnici necessari al funzionamento del sito e per salvare preferenze (es. lingua). Per maggiori informazioni, consulta la Privacy Policy.",
+  "privacyLink": "Privacy Policy",
+  "cookieLink": "Cookie Policy",
+  "ok": "OK"
+},
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "lead": "Questa informativa descrive come trattiamo i dati personali quando navighi sul sito.",
+    "sections": {
+      "controller": {
+        "title": "1. Titolare del trattamento",
+        "body": "Il Titolare del trattamento è PKT Swiss Kart Team. Per richieste o informazioni: contattaci via email ai recapiti indicati nel footer."
+      },
+      "data": {
+        "title": "2. Dati trattati",
+        "items": [
+          "Dati di navigazione (es. indirizzo IP, informazioni sul dispositivo/browser, data e ora di accesso, pagine visitate).",
+          "Preferenze tecniche (es. lingua selezionata), memorizzate tramite cookie o storage locale del browser.",
+          "Il sito non effettua profilazione e, salvo diversa indicazione, non raccoglie dati tramite moduli."
+        ]
+      },
+      "purposes": {
+        "title": "3. Finalità e base giuridica",
+        "items": [
+          "Fornire e far funzionare il sito e le sue funzionalità (necessario per l’erogazione del servizio / legittimo interesse).",
+          "Memorizzare preferenze tecniche (es. lingua) per migliorare l’esperienza di navigazione (strettamente necessario).",
+          "Sicurezza e prevenzione abusi (legittimo interesse)."
+        ]
+      },
+      "cookies": {
+        "title": "4. Cookie e strumenti di archiviazione",
+        "body": "Utilizziamo cookie/strumenti tecnici necessari al funzionamento del sito (ad esempio per la lingua). Non utilizziamo cookie di marketing o profilazione. Puoi gestire o cancellare cookie e dati dalle impostazioni del tuo browser."
+      },
+      "thirdParties": {
+        "title": "5. Contenuti e servizi di terze parti",
+        "body": "Per mostrare contenuti (es. immagini/documenti) il sito può utilizzare servizi tecnici di terze parti (ad es. Google Drive e servizi correlati). Questi fornitori possono ricevere dati tecnici di navigazione (es. IP) necessari all’erogazione dei contenuti."
+      },
+      "recipients": {
+        "title": "6. Destinatari",
+        "body": "I dati possono essere trattati da fornitori tecnici (es. hosting, CDN, servizi Google) che agiscono, ove previsto, come responsabili del trattamento."
+      },
+      "transfers": {
+        "title": "7. Trasferimenti extra UE",
+        "body": "Alcuni fornitori potrebbero trattare dati anche fuori dallo Spazio Economico Europeo. In tal caso, i trasferimenti avvengono nel rispetto delle garanzie previste dalla normativa applicabile (es. Clausole Contrattuali Standard)."
+      },
+      "retention": {
+        "title": "8. Conservazione",
+        "body": "I dati tecnici sono conservati per il tempo strettamente necessario a garantire funzionamento e sicurezza del sito. Le preferenze restano memorizzate finché non vengono cancellate dall’utente."
+      },
+      "rights": {
+        "title": "9. Diritti dell’interessato",
+        "body": "Puoi esercitare i diritti previsti dagli artt. 15–22 GDPR (accesso, rettifica, cancellazione, opposizione, limitazione, portabilità) contattandoci ai recapiti indicati nel footer. Hai inoltre diritto di proporre reclamo al Garante per la protezione dei dati personali."
+      },
+      "updates": {
+        "title": "10. Aggiornamenti",
+        "body": "La presente informativa può essere aggiornata. La versione pubblicata su questa pagina è quella in vigore."
+      }
+    }
+  },
   "Footer": {
     "ariaFooter": "Footer del sito",
     "ariaSocial": "Link social",

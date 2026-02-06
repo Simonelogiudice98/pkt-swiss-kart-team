@@ -179,6 +179,74 @@
     "imgAlt": "Photo {index}"
   }
 },
+"CookieBanner": {
+    "title": "Cookies",
+    "text": "We use technical cookies required for the website to work. If we enable analytics or marketing cookies in the future, you’ll be able to manage your preferences at any time.",
+    "accept": "Ok",
+    "learnMore": "Learn more"
+  },
+  "CookieNotice": {
+  "ariaLabel": "Cookie notice",
+  "kicker": "Cookies",
+  "text": "We only use essential technical cookies required for the website to work and to store preferences (e.g., language). For more information, see our Privacy Policy.",
+  "privacyLink": "Privacy Policy",
+  "cookieLink": "Cookie Policy",
+  "ok": "OK"
+},
+"PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "lead": "This notice explains how we process personal data when you browse the website.",
+    "sections": {
+      "controller": {
+        "title": "1. Data Controller",
+        "body": "The Data Controller is PKT Swiss Kart Team. For requests or information, please contact us via the email address shown in the website footer."
+      },
+      "data": {
+        "title": "2. Data we process",
+        "items": [
+          "Browsing data (e.g., IP address, device/browser information, access date and time, pages visited).",
+          "Technical preferences (e.g., selected language), stored via cookies or local browser storage.",
+          "The website does not perform profiling and, unless otherwise stated, does not collect data through forms."
+        ]
+      },
+      "purposes": {
+        "title": "3. Purposes and legal basis",
+        "items": [
+          "To provide and operate the website and its features (necessary for service delivery / legitimate interest).",
+          "To store technical preferences (e.g., language) to improve the browsing experience (strictly necessary).",
+          "Security and abuse prevention (legitimate interest)."
+        ]
+      },
+      "cookies": {
+        "title": "4. Cookies and storage",
+        "body": "We only use strictly necessary technical cookies/storage required for the website to function (for example, language preference). We do not use marketing or profiling cookies. You can manage or delete cookies and stored data in your browser settings."
+      },
+      "thirdParties": {
+        "title": "5. Third-party services",
+        "body": "To display content (e.g., images/documents), the website may use technical third-party services (e.g., Google Drive and related services). These providers may receive technical browsing data (e.g., IP address) necessary to deliver the content."
+      },
+      "recipients": {
+        "title": "6. Recipients",
+        "body": "Data may be processed by technical providers (e.g., hosting, CDN, Google services) acting as processors where applicable."
+      },
+      "transfers": {
+        "title": "7. International transfers",
+        "body": "Some providers may process data outside the European Economic Area. Where applicable, transfers take place in accordance with relevant safeguards (e.g., Standard Contractual Clauses)."
+      },
+      "retention": {
+        "title": "8. Retention",
+        "body": "Technical data is retained only as long as necessary to operate and secure the website. Preferences remain stored until you delete them."
+      },
+      "rights": {
+        "title": "9. Your rights",
+        "body": "You can exercise your GDPR rights (Articles 15–22: access, rectification, erasure, objection, restriction, portability) by contacting us using the details shown in the footer. You also have the right to lodge a complaint with your local data protection authority."
+      },
+      "updates": {
+        "title": "10. Updates",
+        "body": "This notice may be updated. The version published on this page is the current one."
+      }
+    }
+  },
    "Footer": {
     "ariaFooter": "Site footer",
     "ariaSocial": "Social links",
