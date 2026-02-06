@@ -117,43 +117,40 @@
     { "title": "Progressione", "text": "Metodo, obiettivi realistici e miglioramento costante gara dopo gara." }
   ],
   "assistance": {
-  "title": "Assistenza",
-  "lead": "In gara conta arrivare pronti. Con il nostro servizio di assistenza ti seguiamo dalla preparazione al weekend di gara alla performance in pista, occupandoci di set-up, controlli e gestione operativa. L’attrezzatura essenziale è predisposta dal team: tu viaggi leggero e ti concentri su guida e prestazione, senza stress e senza carichi inutili.",
+  "title": "Assistance",
+  "lead": "On race weekends, being ready makes all the difference. With our assistance service, we support you from preparation to on-track performance, handling set-up, checks, and operational management. Essential equipment is prepared by the team: you travel light and focus on driving and performance—no stress, no unnecessary load.",
   "points": [
-    "Supporto completo in pista e durante il weekend di gara",
-    "Attrezzatura e necessario già predisposti dal team",
-    "Viaggi tranquillo: arrivi e trovi tutto pronto"
+    "Full trackside support throughout the race weekend",
+    "Equipment and essentials already prepared by the team",
+    "Travel with peace of mind: you arrive and everything is ready"
   ],
-  "noteLabel": "Perché funziona",
-  "noteText": "Riduciamo il carico organizzativo ed aumentiamo la qualità del tempo in pista: più focus, più continuità, più risultati.",
-  "highlightTitle": "Weekend senza pensieri",
-
-  "highlightText": "Organizzazione, supporto tecnico e tutto il necessario già pronto in pista: tu pensi solo a guidare.",
-
-  "tabsAriaLabel": "Seleziona una categoria",
+  "noteLabel": "Why it works",
+  "noteText": "We reduce the organizational workload and increase the quality of your time on track: more focus, more consistency, better results.",
+  "highlightTitle": "A worry-free weekend",
+  "highlightText": "Organization, technical support, and everything you need already at the track: you just focus on driving.",
+  "tabsAriaLabel": "Select a category",
   "pill1": "Trackside",
   "pill2": "Set-up",
-  "pill3": "Logistica",
-
+  "pill3": "Logistics",
   "tabs": {
     "trackside": {
-      "miniLeftTitle": "Cosa porti tu",
-      "miniLeftText": "Casco, abbigliamento e ciò che ti serve per stare comodo in pista.",
-      "miniRightTitle": "Cosa portiamo noi",
-      "miniRightText": "Supporto tecnico, organizzazione ed attrezzatura essenziale già predisposta dal team."
+      "miniLeftTitle": "What you bring",
+      "miniLeftText": "Helmet, gear, and anything you need to feel comfortable at the track.",
+      "miniRightTitle": "What we bring",
+      "miniRightText": "Technical support, organization, and essential equipment already prepared by the team."
     },
     "setup": {
       "singleTitle": "Set-up",
-      "singleText": "Si lavora sempre per dare un mezzo adeguato e consono allo stile di guida del pilota con supporto tecnico di qualità e partner vincenti."
+      "singleText": "We always work to deliver a kart that matches the driver’s style, with high-quality technical support and winning partners."
     },
     "logistica": {
-      "miniLeftTitle": "Materiale e postazione",
-      "miniLeftText": "Tutto il necessario è già in pista: tenda, area dedicata e postazione assegnata per ciascun pilota, con mezzi allestiti per coprire ogni esigenza del weekend.",
-      "miniRightTitle": "Zona Hospitality",
-      "miniRightText": "Completa il servizio l’area Hospitality, dove accompagnatori e famiglie possono trascorrere il tempo in armonia durante i weekend di gara."
+      "miniLeftTitle": "Equipment & pit area",
+      "miniLeftText": "Everything is already at the track: tent, dedicated area and assigned pit space for each driver, with fully equipped vehicles to cover every weekend need.",
+      "miniRightTitle": "Hospitality area",
+      "miniRightText": "An additional Hospitality area where families and guests can spend time together in comfort during race weekends."
     }
   }
-  },
+},
   "kartingSchool": {
     "title": "Scuola Karting",
     "lead": "Un percorso dedicato a bambini e ragazzi, pensato per entrare nel karting nel modo giusto: inserimento graduale, tecnica di guida, abitudini corrette e crescita costante.\nDalla scuola karting alle prime gare, accompagniamo piloti e famiglie con un metodo chiaro, obiettivi realistici e presenza in pista.",

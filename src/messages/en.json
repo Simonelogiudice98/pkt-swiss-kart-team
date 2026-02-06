@@ -117,25 +117,40 @@
     { "title": "Progression", "text": "Method, realistic goals and steady improvement race after race." }
   ],
   "assistance": {
-    "title": "Assistance",
-    "lead": "In racing, what matters is showing up prepared. With our trackside support service, we follow you from pre–race weekend preparation through on-track performance, handling set-up, checks, and operational management.The essential equipment is prepared by the team: you travel light and focus on driving and performance—without stress and without unnecessary baggage.",
-    "points": [
-      "Complete trackside support throughout the race weekend",
-      "Equipment and essentials prepared by the team",
-      "Travel with peace of mind: you arrive and everything is ready"
-    ],
-    "noteLabel": "Why it works",
-    "noteText": "We reduce the organizational workload and increase the quality of your time on track: more focus, more consistency, more results.",
-    "highlightTitle": "A worry-free weekend",
-    "highlightText": "We prepare everything you need and support you at every stage: equipment always in order, 360° technical assistance, coaching with telemetry data analysis and video review, and guidance in choosing the right development path so you can improve consistently and achieve success at national and international level. The goal is simple: to help you race in the best possible conditions.",
-    "pill1": "Trackside",
-    "pill2": "Set-up",
-    "pill3": "Logistics",
-    "miniLeftTitle": "What you bring",
-    "miniLeftText": "Helmet, clothing and whatever you need to feel comfortable on track.",
-    "miniRightTitle": "What we bring",
-    "miniRightText": "Technical support, organization, and essential equipment already prepared by the team."
-  },
+  "title": "Assistance",
+  "lead": "On race weekends, being ready makes all the difference. With our assistance service, we support you from preparation to on-track performance, handling set-up, checks, and operational management. Essential equipment is prepared by the team: you travel light and focus on driving and performance—no stress, no unnecessary load.",
+  "points": [
+    "Full trackside support throughout the race weekend",
+    "Equipment and essentials already prepared by the team",
+    "Travel with peace of mind: you arrive and everything is ready"
+  ],
+  "noteLabel": "Why it works",
+  "noteText": "We reduce the organizational workload and increase the quality of your time on track: more focus, more consistency, better results.",
+  "highlightTitle": "A worry-free weekend",
+  "highlightText": "Organization, technical support, and everything you need already at the track: you just focus on driving.",
+  "tabsAriaLabel": "Select a category",
+  "pill1": "Trackside",
+  "pill2": "Set-up",
+  "pill3": "Logistics",
+  "tabs": {
+    "trackside": {
+      "miniLeftTitle": "What you bring",
+      "miniLeftText": "Helmet, gear, and anything you need to feel comfortable at the track.",
+      "miniRightTitle": "What we bring",
+      "miniRightText": "Technical support, organization, and essential equipment already prepared by the team."
+    },
+    "setup": {
+      "singleTitle": "Set-up",
+      "singleText": "We always work to deliver a kart that matches the driver’s style, with high-quality technical support and winning partners."
+    },
+    "logistica": {
+      "miniLeftTitle": "Equipment & pit area",
+      "miniLeftText": "Everything is already at the track: tent, dedicated area and assigned pit space for each driver, with fully equipped vehicles to cover every weekend need.",
+      "miniRightTitle": "Hospitality area",
+      "miniRightText": "An additional Hospitality area where families and guests can spend time together in comfort during race weekends."
+    }
+  }
+},
   "tabsAriaLabel": "Select a category",
 "tabs": {
   "trackside": {
