@@ -11,20 +11,41 @@ import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import AssistanceSection from "../assistanceSection/AssistanceSection";
 import KartingSchoolSection from "../kartingSchoolSection/KartingSchoolSection";
 import s from "./ServicesPage.module.scss";
+import CustomCarousel, {
+  CarouselImage,
+} from "@/components/ui/custom-carusel/CustomCarusel";
+import { SERVICES_IMAGES } from "../Servizi.config";
 
 export default function ServicesPage() {
   const t = useTranslations("Services");
 
   const nav = [
     { id: "assistenza", label: t("nav.assistance"), Icon: EngineeringIcon },
-    { id: "scuola-karting", label: t("nav.school"), Icon: SchoolIcon },
+    { id: "scuola-karting", label: t("nav.kartingSchool"), Icon: SchoolIcon },
   ];
 
   const highlights = [
-    { Icon: EngineeringIcon, title: t("highlights.0.title"), text: t("highlights.0.text") },
-    { Icon: SchoolIcon, title: t("highlights.1.title"), text: t("highlights.1.text") },
-    { Icon: TrendingUpIcon, title: t("highlights.2.title"), text: t("highlights.2.text") },
+    {
+      Icon: EngineeringIcon,
+      title: t("highlights.0.title"),
+      text: t("highlights.0.text"),
+    },
+    {
+      Icon: SchoolIcon,
+      title: t("highlights.1.title"),
+      text: t("highlights.1.text"),
+    },
+    {
+      Icon: TrendingUpIcon,
+      title: t("highlights.2.title"),
+      text: t("highlights.2.text"),
+    },
   ];
+
+  const images: CarouselImage[] = SERVICES_IMAGES.map((img, i) => ({
+    ...img,
+    alt: t("imgAlt", { index: i + 1 }),
+  }));
 
   return (
     <Box className={s.page}>
@@ -37,16 +58,38 @@ export default function ServicesPage() {
 
           <h1 className={s.title}>{t("title")}</h1>
 
-          <p className={s.subtitle}>{t("lead")}</p>
+          <div className={s.heroRow}>
+            <div className={s.heroCopy}>
+              <p className={s.subtitle}>{t("lead")}</p>
 
-          <nav className={s.navRow} aria-label={t("nav.ariaLabel")}>
-            {nav.map(({ id, label, Icon }) => (
-              <a key={id} href={`#${id}`} className={s.navPill}>
-                <Icon className={s.navIcon} />
-                {label}
-              </a>
-            ))}
-          </nav>
+              <nav className={s.navRow} aria-label={t("nav.ariaLabel")}>
+                {nav.map(({ id, label, Icon }) => (
+                  <a key={id} href={`#${id}`} className={s.navPill}>
+                    <Icon className={s.navIcon} />
+                    {label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            <div className={s.carouselWrap}>
+              <CustomCarousel
+                images={images}
+                autoplayMs={6500}
+                frameHeight="260px"
+                fit="cover"
+                sizes="(max-width: 900px) 92vw, 520px"
+                labels={{
+                  prev: t("kartingSchool.prev"),
+                  next: t("kartingSchool.next"),
+                  carouselLabel: t("kartingSchool.carouselLabel"),
+                  dotsLabel: t("kartingSchool.dotsLabel"),
+                  swipeHint: t("kartingSchool.swipeHint"),
+                  goTo: (index) => t("kartingSchool.goTo", { index }),
+                }}
+              />
+            </div>
+          </div>
 
           <div className={s.sectionRule} />
         </header>

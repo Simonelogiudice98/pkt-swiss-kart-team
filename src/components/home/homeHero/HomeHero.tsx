@@ -14,21 +14,21 @@ function isLocale(x: string): x is Locale {
 }
 
 const SLIDES: Slide[] = [
-  { src: "/images/hero/anniversary.jpeg", alt: "", objectPosition: "center" },
+  { src: "/images/hero/anniversary.jpeg", alt: "anniversary", objectPosition: "center" },
   {
     src: "/images/hero/hero-carusel-1.jpeg",
-    alt: "",
+    alt: "box",
     objectPosition: "center",
   },
   {
     src: "/images/hero/hero-carusel-2.jpeg",
-    alt: "",
+    alt: "team",
     objectPosition: "center",
   },
-  { src: "/images/hero/hero-kart.jpeg", alt: "", objectPosition: "center" },
+  { src: "/images/hero/hero-kart.jpeg", alt: "go kart", objectPosition: "center" },
 ];
 
-const AUTOPLAY_MS = 3000;
+const AUTOPLAY_MS = 4000;
 
 export default function HomeHero() {
   const t = useTranslations("HomeHero");

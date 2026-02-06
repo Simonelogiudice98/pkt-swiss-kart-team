@@ -1,0 +1,227 @@
+.slider {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  gap: 12px;
+  align-items: center;
+}
+
+.navBtn {
+  height: 44px;
+  width: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+
+  svg {
+    font-size: 22px;
+  }
+
+  &:hover {
+    border-color: rgba(255, 215, 0, 0.35);
+    background: rgba(255, 215, 0, 0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.18);
+  }
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 12, 16, 0.55);
+  backdrop-filter: blur(10px);
+  cursor: grab;
+
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+  &:hover {
+    border-color: rgba(255, 215, 0, 0.18);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.fadeStage {
+  position: absolute;
+  inset: 0;
+}
+
+.img {
+  filter: saturate(1.06) contrast(1.05);
+  transform: scale(1.03);
+  animation: fadeIn 260ms ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.01);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.slideOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.1) 70%),
+    radial-gradient(600px 280px at 50% 110%, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0) 55%);
+}
+
+.counter {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 12, 16, 0.55);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.counterAccent {
+  color: rgba(255, 215, 0, 0.95);
+}
+.counterSep {
+  margin: 0 6px;
+  color: rgba(255, 255, 255, 0.45);
+}
+.counterTotal {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.swipeHint {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 12, 16, 0.45);
+  backdrop-filter: blur(10px);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dots {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  height: 8px;
+  width: 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: width 180ms ease, background 180ms ease, border-color 180ms ease;
+
+  &:hover {
+    border-color: rgba(255, 215, 0, 0.25);
+    background: rgba(255, 215, 0, 0.14);
+  }
+}
+
+.dotActive {
+  width: 26px;
+  background: rgba(255, 215, 0, 0.35);
+  border-color: rgba(255, 215, 0, 0.45);
+}
+
+.stage {
+  display: grid;
+  gap: 10px;
+  align-items: start;
+}
+
+.captionOverlay {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 12px 12px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(10, 12, 16, 0),
+    rgba(10, 12, 16, 0.72) 25%,
+    rgba(10, 12, 16, 0.86) 100%
+  );
+}
+
+.captionBelow {
+  padding: 10px 2px 0;
+}
+
+.captionTitle {
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.captionText {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+@media (min-width: 901px) {
+  .swipeHint {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .frame {
+    height: 260px;
+  }
+  .slider {
+    grid-template-columns: 40px 1fr 40px;
+  }
+  .navBtn {
+    height: 40px;
+    width: 40px;
+  }
+}
