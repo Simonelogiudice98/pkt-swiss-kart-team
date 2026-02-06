@@ -14,7 +14,7 @@
 "About": {
   "kicker": "About us",
   "title": "One team, one vision",
-  "lead": "PKT was founded in 2016 and entered its first competitions in the KartSport Circuit championship. In just a few years, driven by growing demand and continuous development, the team evolved from an amateur spirit into a professional structure, stepping up the level of karting events and achieving notable results in the Easykart championship.\n\nIn recent seasons, thanks to the passion of its founder Stefano Matteuzzi and the commitment and dedication of the whole team, PKT has raced in multiple championships, expanding its know-how and building a solid organization ready for new competitive challenges.\n\nOur mission is to develop and train young drivers to face national and international races with professionalism and discipline. We work in synergy to offer our clients professionalism, quality, efficiency and elegance, supporting them in achieving their goals.",
+  "lead": "PKT was founded in 2016 and took part in its first competitions within the KartSport Circuit championship. In just a few years, driven by increasing demand and the growth of the project, the team evolved from an amateur spirit into a professional reality—starting with participation in the IAME X30 Italy championship and gradually expanding its commitments and the level of karting competitions it entered, achieving significant results along the way. In recent seasons, thanks to the passion of its founder, Stefano Matteuzzi, and the dedication and hard work of the team, PKT has structured itself to compete in multiple championships within a single season, in order to provide and guarantee a high-level service to its drivers. This has allowed us to broaden our know-how and establish ourselves as a team ready to take on new competitive challenges.Our goal is to grow and develop young drivers, helping them face national and international races with professionalism and discipline. We work in synergy to offer our clients professionalism, quality, efficiency, and elegance—supporting them as they pursue and achieve their dreams.",
   "points": [
     "Since 2016: steady growth and results on track",
     "Development path for young drivers and families",
@@ -104,7 +104,7 @@
   "Services": {
   "kicker": "Overview",
   "title": "Services",
-  "lead": "Full trackside support and growth paths for anyone who wants to approach karting with a method.\nFrom race logistics to youth training: the team supports you at every step, with organization, attention to detail, and one clear goal — improving weekend after weekend.",
+  "lead": "Full trackside support and development pathways designed for those who want to experience karting with a structured approach. From race logistics to the training of young drivers, the team supports you at every stage—with organization, attention to detail, and a clear goal: to improve weekend after weekend.",
   "nav": {
     "ariaLabel": "Jump to a section",
     "assistance": "Assistance",
@@ -118,30 +118,30 @@
   ],
   "assistance": {
     "title": "Assistance",
-    "lead": "In racing, being ready is everything. With our assistance service we support you from preparation to the race weekend on track, taking care of set-up, checks and operations.\nEssential equipment is prepared by the team: you travel light and focus on driving and performance, with no stress and no unnecessary load.",
+    "lead": "In racing, what matters is showing up prepared. With our trackside support service, we follow you from pre–race weekend preparation through on-track performance, handling set-up, checks, and operational management.The essential equipment is prepared by the team: you travel light and focus on driving and performance—without stress and without unnecessary baggage.",
     "points": [
       "Complete trackside support throughout the race weekend",
       "Equipment and essentials prepared by the team",
       "Travel with peace of mind: you arrive and everything is ready"
     ],
     "noteLabel": "Why it works",
-    "noteText": "We reduce the organizational load and increase the quality of your track time: more focus, more continuity, more results.",
+    "noteText": "We reduce the organizational workload and increase the quality of your time on track: more focus, more consistency, more results.",
     "highlightTitle": "A worry-free weekend",
-    "highlightText": "We take care of everything and support you at every stage: perfectly organized equipment, 360° technical support, coaching with telemetry and video analysis, and a clear development path to help you grow and improve consistently—aiming for success at national and international level. The goal is simple: to put you on track in the best possible conditions.",
+    "highlightText": "We prepare everything you need and support you at every stage: equipment always in order, 360° technical assistance, coaching with telemetry data analysis and video review, and guidance in choosing the right development path so you can improve consistently and achieve success at national and international level. The goal is simple: to help you race in the best possible conditions.",
     "pill1": "Trackside",
     "pill2": "Set-up",
     "pill3": "Logistics",
     "miniLeftTitle": "What you bring",
     "miniLeftText": "Helmet, clothing and whatever you need to feel comfortable on track.",
     "miniRightTitle": "What we bring",
-    "miniRightText": "Technical support, organization and essential equipment prepared by the team."
+    "miniRightText": "Technical support, organization, and essential equipment already prepared by the team."
   },
   "kartingSchool": {
     "title": "Karting School",
     "lead": "A dedicated path for kids and teens, designed to enter karting the right way: gradual onboarding, driving technique, good habits and steady progression.\nFrom karting school to the first races, we support drivers and families with a clear method, realistic goals and track presence.",
     "points": [
       "Start young and progress by age and category",
-      "Training, technique, and a racer’s mindset.",
+      "Training, technique, and a \"racer’s\" mindset.",
       "Competition support with dedicated assistance"
     ],
     "tipLabel": "Guided path",

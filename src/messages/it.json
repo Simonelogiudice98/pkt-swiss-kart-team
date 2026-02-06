@@ -14,7 +14,7 @@
    "About": {
   "kicker": "Chi siamo",
   "title": "Un team, una visione",
-  "lead": "Il team PKT nasce nel 2016 ed effettua le prime competizioni all’interno del campionato KartSport Circuit. In pochi anni, grazie alle richieste e alla crescita del progetto, il team evolve da uno spirito amatoriale a uno professionistico, aumentando il livello delle competizioni karting a cui prende parte e ottenendo risultati di rilievo nel campionato Easykart.\n\nNelle ultime stagioni, frutto della passione del fondatore Stefano Matteuzzi e dell’impegno e della dedizione dei collaboratori, PKT ha preso parte a più campionati ampliando il proprio know-how e strutturandosi come una realtà pronta a intraprendere nuove avventure agonistiche.\n\nIl nostro scopo è crescere e formare giovani piloti per affrontare al meglio gare di livello nazionale e internazionale con professionalità e disciplina. Lavoriamo in sinergia per offrire ai nostri clienti professionalità, qualità, efficienza ed eleganza, accompagnandoli nel raggiungimento dei propri sogni.",
+  "lead": "Il team PKT nasce nel 2016 ed effettua le prime competizioni all’interno del campionato KartSport Circuit. In pochi anni, grazie alle richieste ed alla crescita del progetto, il team evolve da uno spirito amatoriale ad uno professionistico, partendo dalla partecipazione al campionato Iame X30 Italy ed aumentando negli anni gli impegni ed il livello delle competizioni karting a cui prende parte, arrivando ad  ottenere risultati di rilievo nei campionati a cui ha preso parte. Nelle ultime stagioni, frutto della passione del suo fondatore Stefano Matteuzzi e dell’impegno e della dedizione dei collaboratori, PKT si è strutturato per prendere parte a più campionati nella singola stagione per fornire e garantire un servizio di livello ai propri piloti; ciò ha consentito di ampliare il proprio know-how e strutturarsi come una realtà pronta a intraprendere nuove avventure agonistiche. Il nostro scopo è crescere e formare giovani piloti per affrontare al meglio gare di livello nazionale e internazionale con professionalità e disciplina. Lavoriamo in sinergia per offrire ai nostri clienti professionalità, qualità, efficienza ed eleganza, accompagnandoli nel raggiungimento dei propri sogni.",
   "points": [
     "Dal 2016: crescita costante e risultati in pista",
     "Formazione e supporto per giovani piloti e famiglie",
@@ -36,7 +36,7 @@
     {
       "alt": "Kart in azione",
       "title": "Driver development",
-      "caption": "Percorso di crescita: dalla scuola karting alle competizioni nazionali e internazionali."
+      "caption": "Percorso di crescita: dalla scuola karting alle competizioni nazionali ed internazionali."
     },
     {
       "alt": "Briefing del team",
@@ -104,7 +104,7 @@
 "Services": {
   "kicker": "Panoramica",
   "title": "Servizi",
-  "lead": "Supporto completo in pista e percorsi di crescita pensati per chi vuole vivere il karting con metodo.\nDalla logistica di gara alla formazione dei più giovani: il team ti accompagna in ogni fase, con organizzazione, cura dei dettagli e un obiettivo chiaro — migliorare weekend dopo weekend.",
+  "lead": "Supporto completo in pista e percorsi di crescita pensati per chi vuole vivere il karting con metodo. Dalla logistica di gara alla formazione dei più giovani: il team ti accompagna in ogni fase, con organizzazione, cura dei dettagli ed un obiettivo chiaro — migliorare weekend dopo weekend.",
   "nav": {
     "ariaLabel": "Vai a una sezione",
     "assistance": "Assistenza",
@@ -118,30 +118,30 @@
   ],
   "assistance": {
     "title": "Assistenza",
-    "lead": "In gara conta arrivare pronti. Con il nostro servizio di assistenza ti seguiamo dalla preparazione al weekend in pista, occupandoci di set-up, controlli e gestione operativa.\nL’attrezzatura essenziale è predisposta dal team: tu viaggi leggero e ti concentri su guida e performance, senza stress e senza carichi inutili.",
+    "lead": "In gara conta arrivare pronti. Con il nostro servizio di assistenza ti seguiamo dalla preparazione al weekend di gara alla performance in pista, occupandoci di set-up, controlli e gestione operativa. L’attrezzatura essenziale è predisposta dal team: tu viaggi leggero e ti concentri su guida e prestazione, senza stress e senza carichi inutili.",
     "points": [
       "Supporto completo in pista e durante il weekend di gara",
       "Attrezzatura e necessario già predisposti dal team",
       "Viaggi tranquillo: arrivi e trovi tutto pronto"
     ],
     "noteLabel": "Perché funziona",
-    "noteText": "Riduciamo il carico organizzativo e aumentiamo la qualità del tempo in pista: più focus, più continuità, più risultati.",
+    "noteText": "Riduciamo il carico organizzativo ed aumentiamo la qualità del tempo in pista: più focus, più continuità, più risultati.",
     "highlightTitle": "Weekend senza pensieri",
-    "highlightText": "Prepariamo il necessario e ti assistiamo in ogni fase: materiale sempre in ordine, supporto tecnico a 360°, coaching con analisi telemetria e video e scelta del percorso per crescere e migliorare costantemente per raggiungere successi a livello nazionale ed internazionale. L’obiettivo è semplice: farti correre nelle migliori condizioni possibili",
+    "highlightText": "Prepariamo il necessario e ti assistiamo in ogni fase: materiale sempre in ordine, supporto tecnico a 360°, coaching con analisi dati della telemetria e video con scelta del percorso per crescere e migliorare costantemente arrivando così a raggiungere successi di livello nazionale ed internazionale. L’obiettivo è semplice: farti correre nelle migliori condizioni possibili.",
     "pill1": "Trackside",
     "pill2": "Set-up",
     "pill3": "Logistica",
     "miniLeftTitle": "Cosa porti tu",
     "miniLeftText": "Casco, abbigliamento e ciò che ti serve per stare comodo in pista.",
     "miniRightTitle": "Cosa portiamo noi",
-    "miniRightText": "Supporto tecnico, organizzazione e attrezzatura essenziale già predisposta dal team."
+    "miniRightText": "Supporto tecnico, organizzazione ed attrezzatura essenziale già predisposta dal team."
   },
   "kartingSchool": {
     "title": "Scuola Karting",
     "lead": "Un percorso dedicato a bambini e ragazzi, pensato per entrare nel karting nel modo giusto: inserimento graduale, tecnica di guida, abitudini corrette e crescita costante.\nDalla scuola karting alle prime gare, accompagniamo piloti e famiglie con un metodo chiaro, obiettivi realistici e presenza in pista.",
     "points": [
       "Inserimento da piccoli e progressione per età e categoria",
-      "Allenamenti, tecnica e mentalità da pilota”",
+      "Allenamenti, tecnica e mentalità da \"pilota\"",
       "Accompagnamento alle competizioni con supporto dedicato"
     ],
     "tipLabel": "Percorso guidato",
