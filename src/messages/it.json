@@ -117,24 +117,42 @@
     { "title": "Progressione", "text": "Metodo, obiettivi realistici e miglioramento costante gara dopo gara." }
   ],
   "assistance": {
-    "title": "Assistenza",
-    "lead": "In gara conta arrivare pronti. Con il nostro servizio di assistenza ti seguiamo dalla preparazione al weekend di gara alla performance in pista, occupandoci di set-up, controlli e gestione operativa. L’attrezzatura essenziale è predisposta dal team: tu viaggi leggero e ti concentri su guida e prestazione, senza stress e senza carichi inutili.",
-    "points": [
-      "Supporto completo in pista e durante il weekend di gara",
-      "Attrezzatura e necessario già predisposti dal team",
-      "Viaggi tranquillo: arrivi e trovi tutto pronto"
-    ],
-    "noteLabel": "Perché funziona",
-    "noteText": "Riduciamo il carico organizzativo ed aumentiamo la qualità del tempo in pista: più focus, più continuità, più risultati.",
-    "highlightTitle": "Weekend senza pensieri",
-    "highlightText": "Prepariamo il necessario e ti assistiamo in ogni fase: materiale sempre in ordine, supporto tecnico a 360°, coaching con analisi dati della telemetria e video con scelta del percorso per crescere e migliorare costantemente arrivando così a raggiungere successi di livello nazionale ed internazionale. L’obiettivo è semplice: farti correre nelle migliori condizioni possibili.",
-    "pill1": "Trackside",
-    "pill2": "Set-up",
-    "pill3": "Logistica",
-    "miniLeftTitle": "Cosa porti tu",
-    "miniLeftText": "Casco, abbigliamento e ciò che ti serve per stare comodo in pista.",
-    "miniRightTitle": "Cosa portiamo noi",
-    "miniRightText": "Supporto tecnico, organizzazione ed attrezzatura essenziale già predisposta dal team."
+  "title": "Assistenza",
+  "lead": "In gara conta arrivare pronti. Con il nostro servizio di assistenza ti seguiamo dalla preparazione al weekend di gara alla performance in pista, occupandoci di set-up, controlli e gestione operativa. L’attrezzatura essenziale è predisposta dal team: tu viaggi leggero e ti concentri su guida e prestazione, senza stress e senza carichi inutili.",
+  "points": [
+    "Supporto completo in pista e durante il weekend di gara",
+    "Attrezzatura e necessario già predisposti dal team",
+    "Viaggi tranquillo: arrivi e trovi tutto pronto"
+  ],
+  "noteLabel": "Perché funziona",
+  "noteText": "Riduciamo il carico organizzativo ed aumentiamo la qualità del tempo in pista: più focus, più continuità, più risultati.",
+  "highlightTitle": "Weekend senza pensieri",
+
+  "highlightText": "Organizzazione, supporto tecnico e tutto il necessario già pronto in pista: tu pensi solo a guidare.",
+
+  "tabsAriaLabel": "Seleziona una categoria",
+  "pill1": "Trackside",
+  "pill2": "Set-up",
+  "pill3": "Logistica",
+
+  "tabs": {
+    "trackside": {
+      "miniLeftTitle": "Cosa porti tu",
+      "miniLeftText": "Casco, abbigliamento e ciò che ti serve per stare comodo in pista.",
+      "miniRightTitle": "Cosa portiamo noi",
+      "miniRightText": "Supporto tecnico, organizzazione ed attrezzatura essenziale già predisposta dal team."
+    },
+    "setup": {
+      "singleTitle": "Set-up",
+      "singleText": "Si lavora sempre per dare un mezzo adeguato e consono allo stile di guida del pilota con supporto tecnico di qualità e partner vincenti."
+    },
+    "logistica": {
+      "miniLeftTitle": "Materiale e postazione",
+      "miniLeftText": "Tutto il necessario è già in pista: tenda, area dedicata e postazione assegnata per ciascun pilota, con mezzi allestiti per coprire ogni esigenza del weekend.",
+      "miniRightTitle": "Zona Hospitality",
+      "miniRightText": "Completa il servizio l’area Hospitality, dove accompagnatori e famiglie possono trascorrere il tempo in armonia durante i weekend di gara."
+    }
+  }
   },
   "kartingSchool": {
     "title": "Scuola Karting",

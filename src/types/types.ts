@@ -65,3 +65,5 @@ export interface PilotDTO {
   name: string; 
   photoFileId?: string; 
 };
+
+export type TabKey = "trackside" | "setup" | "logistica";

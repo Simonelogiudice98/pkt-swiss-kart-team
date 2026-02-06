@@ -136,6 +136,30 @@
     "miniRightTitle": "What we bring",
     "miniRightText": "Technical support, organization, and essential equipment already prepared by the team."
   },
+  "tabsAriaLabel": "Select a category",
+"tabs": {
+  "trackside": {
+    "highlightText": "We prepare everything you need and support you at every stage: equipment always in order, 360° technical assistance, coaching with telemetry data analysis and video review with line selection to help you grow and improve consistently—reaching national and international-level results. The goal is simple: to let you race in the best possible conditions.",
+    "miniLeftTitle": "What you bring",
+    "miniLeftText": "Helmet, clothing and whatever you need to stay comfortable at the track.",
+    "miniRightTitle": "What we bring",
+    "miniRightText": "Technical support, organisation and essential equipment already prepared by the team."
+  },
+  "setup": {
+    "highlightText": "We take care of set-up and checks so you hit the track with a kart that’s ready and consistent: inspections, adjustments and technical management to maximise performance, reducing unexpected issues and wasted time.",
+    "miniLeftTitle": "What you bring",
+    "miniLeftText": "Your personal gear and whatever you prefer to have with you in the paddock.",
+    "miniRightTitle": "What we bring",
+    "miniRightText": "Checks, set-up, technical support and operational management throughout the weekend."
+  },
+  "logistica": {
+    "highlightText": "We handle the organisational side of the weekend: preparation, coordination and continuous support. You travel light and focus on driving and performance—no stress and no unnecessary loads.",
+    "miniLeftTitle": "What you bring",
+    "miniLeftText": "You arrive light: personal gear and the essentials to stay comfortable.",
+    "miniRightTitle": "What we bring",
+    "miniRightText": "Organisation, essential equipment and full support already prepared by the team."
+  }
+},
   "kartingSchool": {
     "title": "Karting School",
     "lead": "A dedicated path for kids and teens, designed to enter karting the right way: gradual onboarding, driving technique, good habits and steady progression.\nFrom karting school to the first races, we support drivers and families with a clear method, realistic goals and track presence.",

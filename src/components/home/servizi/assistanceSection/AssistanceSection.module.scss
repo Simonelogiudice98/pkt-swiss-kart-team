@@ -177,10 +177,18 @@
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
+  appearance: none;
+  font: inherit;
 
+  cursor: pointer;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.86);
+}
+
+.pill:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 3px;
 }
 
 .pillAccent {
@@ -201,6 +209,10 @@
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: rgba(255, 255, 255, 0.04);
   padding: 12px;
+}
+
+.miniBoxFull {
+  grid-column: 1 / -1;
 }
 
 .miniLabel {
