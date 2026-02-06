@@ -8,6 +8,7 @@ export interface Item {
 export interface Slide {
   src: string;
   alt: string;
+  objectPosition?: string;
 };
 
 export interface HistoryItem {

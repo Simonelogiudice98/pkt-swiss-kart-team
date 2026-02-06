@@ -216,7 +216,6 @@
   outline-offset: 3px;
 }
 
-/* Header row: PARTNERS a sinistra, SUPPORTERS a destra */
 .headerRow {
   display: flex;
   align-items: flex-end;
@@ -263,6 +262,35 @@
   height: 3px;
   background: linear-gradient(90deg, rgba(255,210,0,1), rgba(229,57,53,0.65));
   opacity: 0.95;
+}
+
+.group {
+  display: grid;
+  gap: 18px;
+}
+
+.group + .group {
+  margin-top: 34px;
+}
+
+.groupHeader {
+  display: grid;
+  gap: 10px;
+  align-items: end;
+}
+
+@media (max-width: 620px) {
+  .partnerCard {
+    height: 96px; /* era 118px */
+  }
+
+  .partnerLogoWrap {
+    height: 48px; /* era 58px */
+  }
+
+  .partnerInner {
+    padding: 14px; /* era 18px */
+  }
 }
 
 .split {

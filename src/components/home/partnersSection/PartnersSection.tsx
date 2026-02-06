@@ -62,26 +62,24 @@ export default function PartnersSection({ partners, supporters }: Props) {
   return (
     <section className={styles.section} id="partners">
       <div className={styles.container}>
-        <div className={styles.headerRow}>
-          <div className={styles.headerCol}>
+        {/* PARTNERS */}
+        <div className={styles.group}>
+          <div className={styles.groupHeader}>
             <h3 className={styles.h3}>{t("partnersTitle")}</h3>
             <span className={styles.groupUnderline} />
           </div>
 
-          <div className={styles.headerColRight}>
+          <CardsGrid items={partners} />
+        </div>
+
+        {/* SUPPORTERS */}
+        <div className={styles.group}>
+          <div className={styles.groupHeader}>
             <h3 className={styles.h3}>{t("supportersTitle")}</h3>
             <span className={styles.groupUnderline} />
           </div>
-        </div>
 
-        <div className={styles.split}>
-          <div className={styles.left}>
-            <CardsGrid items={partners} />
-          </div>
-
-          <div className={styles.right}>
-            <CardsGrid items={supporters} />
-          </div>
+          <CardsGrid items={supporters} />
         </div>
       </div>
     </section>

@@ -144,7 +144,7 @@ export default function DriversSection() {
         {!loading && imagesLoading && (
           <Box className={s.imagesLoaderRow} aria-live="polite">
             <CircularProgress size={18} />
-            <span className={s.imagesLoaderText}>Caricamento immagini…</span>
+            <span className={s.imagesLoaderText}>Caricamento piloti...</span>
           </Box>
         )}
 

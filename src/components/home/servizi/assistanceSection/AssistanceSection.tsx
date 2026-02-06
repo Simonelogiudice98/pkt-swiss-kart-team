@@ -60,7 +60,6 @@ export default function AssistanceSection() {
           <div className={s.highlightCard}>
             <div className={s.highlightTitle}>{t("highlightTitle")}</div>
 
-            {/* testo “generico” uguale per tutti */}
             <p className={s.highlightText}>{t("highlightText")}</p>
 
             <div className={s.pills} role="tablist" aria-label={t("tabsAriaLabel")}>
