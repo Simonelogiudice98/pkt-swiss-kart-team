@@ -28,7 +28,7 @@ const SLIDES: Slide[] = [
   { src: "/images/hero/hero-kart.jpeg", alt: "", objectPosition: "center" },
 ];
 
-const AUTOPLAY_MS = 2000;
+const AUTOPLAY_MS = 3000;
 
 export default function HomeHero() {
   const t = useTranslations("HomeHero");
