@@ -53,7 +53,7 @@ const supporters = [
   {
     key: "csp",
     name: "CSP",
-    href: "https://www.instagram.com/custom_and_style_parts?igsh=dmV6cDVrbWV4YXo2",
+    href: "https://www.instagram.com/custom_and_style_parts/",
     logoSrc: "/images/partners/CSP.svg",
   },
   

@@ -62,7 +62,6 @@ export default function PartnersSection({ partners, supporters }: Props) {
   return (
     <section className={styles.section} id="partners">
       <div className={styles.container}>
-        {/* PARTNERS */}
         <div className={styles.group}>
           <div className={styles.groupHeader}>
             <h3 className={styles.h3}>{t("partnersTitle")}</h3>
@@ -72,7 +71,6 @@ export default function PartnersSection({ partners, supporters }: Props) {
           <CardsGrid items={partners} />
         </div>
 
-        {/* SUPPORTERS */}
         <div className={styles.group}>
           <div className={styles.groupHeader}>
             <h3 className={styles.h3}>{t("supportersTitle")}</h3>
