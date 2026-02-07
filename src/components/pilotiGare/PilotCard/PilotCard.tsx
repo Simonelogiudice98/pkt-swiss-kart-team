@@ -7,7 +7,7 @@ import s from "./PilotCard.module.scss";
 
 export interface Pilot {
   id: string;
-  name: string;         
+  name: string;
   category: string;
   since: number;
   photoUrl?: string;
