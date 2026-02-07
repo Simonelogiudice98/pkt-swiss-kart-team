@@ -35,10 +35,10 @@ function bufferToArrayBuffer(buf: Buffer): ArrayBuffer {
 
 export async function GET(
   _req: Request,
-  { params }: { params: Promise<{ fileId: string }> }
+  { params }: { params: { fileId: string } }
 ) {
   try {
-    const { fileId } = await params;
+    const { fileId } = params;
 
     const drive = getDriveClient();
 
@@ -63,7 +63,9 @@ export async function GET(
       status: 200,
       headers: {
         "Content-Type": contentType,
-        "Cache-Control": "public, max-age=3600",
+        "Content-Length": String(buf.length),
+        "Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
+        "X-Content-Type-Options": "nosniff",
       },
     });
   } catch (e: unknown) {
