@@ -103,10 +103,7 @@ export default function HomeHero() {
                   loading={idx === active ? "eager" : "lazy"}
                   fetchPriority={idx === active ? "high" : "auto"}
                   sizes="100vw"
-                  style={{
-                    objectFit: "cover",
-                    objectPosition: s.objectPosition ?? "center",
-                  }}
+                  style={{ objectPosition: s.objectPosition ?? "center" }}
                 />
               </div>
             );
