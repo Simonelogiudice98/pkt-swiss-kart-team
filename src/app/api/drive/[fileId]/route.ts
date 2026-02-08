@@ -26,7 +26,6 @@ async function streamToBuffer(stream: Readable): Promise<Buffer> {
   return Buffer.concat(chunks);
 }
 
-// cache in-memory + dedupe (utile soprattutto in dev / burst)
 const MEM_TTL_MS = 60_000;
 const mem = new Map<string, { exp: number; buf: Buffer; contentType: string }>();
 const inFlight = new Map<string, Promise<{ buf: Buffer; contentType: string }>>();
@@ -73,7 +72,7 @@ type DriveErrorPayload = { error?: { message?: string } };
 
 export async function GET(
   _req: NextRequest,
-  ctx: { params: Promise<{ fileId: string }> } // 👈 questo è ciò che il validator si aspetta nel tuo progetto
+  ctx: { params: Promise<{ fileId: string }> }
 ) {
   try {
     const { fileId } = await ctx.params;
@@ -89,7 +88,6 @@ export async function GET(
       headers: {
         "Content-Type": contentType,
         "Content-Length": String(buf.length),
-        // aggiungi s-maxage se deployi su CDN (Vercel ecc.)
         "Cache-Control":
           "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800",
         "X-Content-Type-Options": "nosniff",

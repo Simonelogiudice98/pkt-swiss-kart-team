@@ -47,7 +47,6 @@ export default function DriversSection() {
           name: x.name,
           category: "DRIVER",
           since: year,
-          // ✅ passa dal tuo backend (cache + dedupe)
           photoUrl: x.photoFileId ? `/api/drive/${encodeURIComponent(x.photoFileId.trim())}` : undefined,
         }));
 
