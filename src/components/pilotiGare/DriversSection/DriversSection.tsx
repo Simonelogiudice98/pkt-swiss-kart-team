@@ -3,18 +3,22 @@
 import * as React from "react";
 import { Container, Grid } from "@mui/material";
 import { useTranslations } from "next-intl";
-import PilotCard, { Pilot } from "../PilotCard/PilotCard";
+import PilotCard from "../PilotCard/PilotCard";
 import s from "./DriversSection.module.scss";
-import { PilotApi } from "@/types/types";
+import { Pilot, PilotDTO } from "@/types/types";
 
-function isPilotApi(x: unknown): x is PilotApi {
+function isPilotApi(x: unknown): x is PilotDTO {
   if (!x || typeof x !== "object") return false;
   const o = x as Record<string, unknown>;
   const okBase = typeof o.id === "string" && typeof o.name === "string";
-  const okPhoto = o.photoFileId === undefined || typeof o.photoFileId === "string";
-  return okBase && okPhoto;
+  const okPhoto =
+    o.photoFileId === undefined || typeof o.photoFileId === "string";
+  const okVer =
+    o.photoVersion === undefined || typeof o.photoVersion === "string";
+  return okBase && okPhoto && okVer;
 }
-function isPilotApiArray(x: unknown): x is PilotApi[] {
+
+function isPilotApiArray(x: unknown): x is PilotDTO[] {
   return Array.isArray(x) && x.every(isPilotApi);
 }
 
@@ -35,11 +39,12 @@ export default function DriversSection() {
         setLoading(true);
         setError(null);
 
-        const res = await fetch("/api/pilots", { cache: "no-store" });
+        const res = await fetch("/api/pilots");
         if (!res.ok) throw new Error(`API error: ${res.status}`);
 
         const json: unknown = await res.json();
-        if (!isPilotApiArray(json)) throw new Error("Formato risposta /api/pilots non valido");
+        if (!isPilotApiArray(json))
+          throw new Error("Formato risposta /api/pilots non valido");
 
         const year = new Date().getFullYear();
         const mapped: Pilot[] = json.map((x) => ({
@@ -47,12 +52,17 @@ export default function DriversSection() {
           name: x.name,
           category: "DRIVER",
           since: year,
-          photoUrl: x.photoFileId ? `/api/drive/${encodeURIComponent(x.photoFileId.trim())}` : undefined,
+          photoUrl: x.photoFileId
+            ? `/api/drive/${encodeURIComponent(x.photoFileId.trim())}${
+                x.photoVersion ? `?v=${encodeURIComponent(x.photoVersion)}` : ""
+              }`
+            : undefined,
         }));
 
         if (alive) setPilots(mapped);
       } catch (e: unknown) {
-        const msg = e instanceof Error ? e.message : "Errore nel caricamento piloti";
+        const msg =
+          e instanceof Error ? e.message : "Errore nel caricamento piloti";
         if (alive) setError(msg);
       } finally {
         if (alive) setLoading(false);
@@ -64,7 +74,9 @@ export default function DriversSection() {
     };
   }, []);
 
-  const skeletonCount = loading ? SKELETON_COUNT : Math.max(pilots.length, SKELETON_COUNT);
+  const skeletonCount = loading
+    ? SKELETON_COUNT
+    : Math.max(pilots.length, SKELETON_COUNT);
 
   return (
     <section className={s.section} id="piloti">

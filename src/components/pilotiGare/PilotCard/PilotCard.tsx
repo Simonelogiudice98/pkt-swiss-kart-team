@@ -4,14 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import { Box, Card, CardActionArea } from "@mui/material";
 import s from "./PilotCard.module.scss";
-
-export interface Pilot {
-  id: string;
-  name: string;
-  category: string;
-  since: number;
-  photoUrl?: string;
-}
+import { Pilot } from "@/types/types";
 
 export default function PilotCard({ pilot }: { pilot: Pilot }) {
   return (
