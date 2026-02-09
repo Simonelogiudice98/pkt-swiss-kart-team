@@ -29,7 +29,7 @@ export async function getPilotsFromDrive(rootFolderId: string): Promise<PilotDTO
   const running = pilotsInFlight.get(rootFolderId);
   if (running) return running;
 
-  const p = (async () => {
+  const p: Promise<PilotDTO[]> = (async () => {
     const drive = getDriveClient();
 
     const foldersRes = await drive.files.list({
@@ -43,12 +43,17 @@ export async function getPilotsFromDrive(rootFolderId: string): Promise<PilotDTO
     const folders = foldersRes.data.files ?? [];
 
     const pilots: PilotDTO[] = await Promise.all(
-      folders.map(async (f) => {
-        const folderId = f.id!;
-        const folderName = f.name || "Unknown";
+      folders.map(async (f): Promise<PilotDTO> => {
+        const folderId = f.id ?? "";
+        const folderName = f.name ?? "Unknown";
+
+        if (!folderId) {
+          return { id: "", name: folderName, photoFileId: undefined, photoVersion: undefined };
+        }
+
         const imgRes = await drive.files.list({
           q: `'${folderId}' in parents and mimeType contains 'image/' and trashed=false`,
-          fields: "files(id,name,mimeType,modifiedTime,md5Checksum)",
+          fields: "files(id,modifiedTime,md5Checksum)",
           orderBy: "modifiedTime desc",
           pageSize: 1,
           supportsAllDrives: true,
@@ -57,23 +62,27 @@ export async function getPilotsFromDrive(rootFolderId: string): Promise<PilotDTO
 
         const photo = (imgRes.data.files ?? [])[0];
 
-        const photoVersion =
-          (photo?.md5Checksum ?? undefined) ||
-          (photo?.modifiedTime ?? undefined);
+        const photoFileId = photo?.id ?? undefined;
+
+        const photoVersion: string | undefined =
+          photo?.md5Checksum ??
+          (photo?.modifiedTime ? String(Date.parse(photo.modifiedTime)) : undefined);
 
         return {
           id: folderId,
           name: folderName,
-          photoFileId: photo?.id ?? undefined,
+          photoFileId,
           photoVersion,
         };
       })
     );
 
-    pilots.sort((a, b) => a.name.localeCompare(b.name, "it"));
+    const cleaned = pilots
+      .filter((p) => p.id) 
+      .sort((a, b) => a.name.localeCompare(b.name, "it"));
 
-    pilotsMem.set(rootFolderId, { exp: now + PILOTS_TTL_MS, data: pilots });
-    return pilots;
+    pilotsMem.set(rootFolderId, { exp: now + PILOTS_TTL_MS, data: cleaned });
+    return cleaned;
   })().finally(() => {
     pilotsInFlight.delete(rootFolderId);
   });
@@ -81,3 +90,4 @@ export async function getPilotsFromDrive(rootFolderId: string): Promise<PilotDTO
   pilotsInFlight.set(rootFolderId, p);
   return p;
 }
+
