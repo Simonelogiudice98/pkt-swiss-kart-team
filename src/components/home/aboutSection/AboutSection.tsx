@@ -12,19 +12,19 @@ export default function AboutSection() {
 
   const slides: CarouselImage[] = [
     {
-      src: "/images/about/about-1.jpeg",
+      src: "/images/about/about1.jpeg",
       alt: t("slides.0.alt"),
       captionTitle: t("slides.0.title"),
       captionText: t("slides.0.caption"),
     },
     {
-      src: "/images/about/about-2.jpeg",
+      src: "/images/about/about2.jpeg",
       alt: t("slides.1.alt"),
       captionTitle: t("slides.1.title"),
       captionText: t("slides.1.caption"),
     },
     {
-      src: "/images/about/about-3.jpeg",
+      src: "/images/about/about3.jpeg",
       alt: t("slides.2.alt"),
       captionTitle: t("slides.2.title"),
       captionText: t("slides.2.caption"),

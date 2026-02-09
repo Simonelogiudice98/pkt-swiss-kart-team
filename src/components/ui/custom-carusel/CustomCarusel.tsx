@@ -12,8 +12,6 @@ export type CarouselImage = {
   src: string;
   alt: string;
   objectPosition?: string;
-
-  // ✅ NEW: didascalia opzionale
   captionTitle?: string;
   captionText?: string;
 };

@@ -87,7 +87,8 @@
       "winteler": { "name": "Winteler" },
       "galetti": { "name": "Galetti Pneumatici" },
       "finardi": { "name": "Finardi & Partners" },
-      "csp": { "name": "CSP" }
+      "csp": { "name": "CSP" },
+      "torsion_project": { "name": "Torsion Project" }
     }
   },
   "DriversRaces": {
