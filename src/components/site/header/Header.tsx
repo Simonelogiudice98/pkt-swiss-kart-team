@@ -73,10 +73,10 @@ export default function Header() {
   return (
     <>
       <AppBar
-        position="fixed"
-        elevation={0}
+      position="sticky"
+  elevation={0}
         sx={{
-          background: trigger ? "rgba(10,12,16,0.88)" : "rgba(10,12,16,0.18)",
+          background: trigger ? "rgba(10,12,16,0.88)" : "#061445",
           backdropFilter: "blur(10px)",
           borderBottom: trigger
             ? "1px solid rgba(255,210,0,0.22)"
@@ -202,8 +202,6 @@ export default function Header() {
           </Stack>
         </Toolbar>
       </AppBar>
-
-      <Box sx={{ height: { xs: 64, md: 72 } }} />
 
       <Dialog
         fullScreen

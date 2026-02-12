@@ -17,7 +17,7 @@ const SLIDES: Slide[] = [
   {
     src: "/images/hero/anniversary.jpeg",
     alt: "anniversary",
-    objectPosition: "center",
+    objectPosition: "center 30%"
   },
   {
     src: "/images/hero/hero-carusel-3.jpeg",
@@ -32,7 +32,7 @@ const SLIDES: Slide[] = [
   {
     src: "/images/hero/hero-carusel-2.jpeg",
     alt: "team",
-    objectPosition: "center",
+    objectPosition: "center 28%"
   },
   {
     src: "/images/hero/hero-kart.jpeg",
