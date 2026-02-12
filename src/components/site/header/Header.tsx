@@ -73,10 +73,10 @@ export default function Header() {
   return (
     <>
       <AppBar
-      position="sticky"
-  elevation={0}
+        position="sticky"
+        elevation={0}
         sx={{
-          background: trigger ? "rgba(10,12,16,0.88)" : "#061445",
+          background: trigger ? "#061445" : "#061445",
           backdropFilter: "blur(10px)",
           borderBottom: trigger
             ? "1px solid rgba(255,210,0,0.22)"
@@ -105,6 +105,7 @@ export default function Header() {
                 position: "relative",
                 width: { xs: 140, md: 220 },
                 height: { xs: 44, md: 80 },
+                backgroundColor: "white",
               }}
             >
               <Image

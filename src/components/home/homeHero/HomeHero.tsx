@@ -25,7 +25,7 @@ const SLIDES: Slide[] = [
     objectPosition: "center",
   },
   {
-    src: "/images/hero/hero-carusel-1.jpeg",
+    src: "/images/hero/hero-carusel1.jpeg",
     alt: "box",
     objectPosition: "center",
   },

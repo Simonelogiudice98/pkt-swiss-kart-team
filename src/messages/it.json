@@ -30,12 +30,12 @@
     "slides": [
       {
         "alt": "Team in pista",
-        "title": "Trackside support",
+        "title": "Assistenza in pista",
         "caption": "Presenza costante e supporto tecnico durante test e weekend di gara."
       },
       {
         "alt": "Kart in azione",
-        "title": "Driver development",
+        "title": "Formazione del pilota",
         "caption": "Percorso di crescita: dalla scuola karting alle competizioni nazionali ed internazionali."
       },
       {
@@ -148,7 +148,7 @@
       "highlightTitle": "Weekend senza pensieri",
       "highlightText": "Organizzazione, supporto tecnico e tutto il necessario già pronto in pista: tu pensi solo a guidare.",
       "tabsAriaLabel": "Seleziona una categoria",
-      "pill1": "Trackside",
+      "pill1": "Pista",
       "pill2": "Set-up",
       "pill3": "Logistica",
       "tabs": {
