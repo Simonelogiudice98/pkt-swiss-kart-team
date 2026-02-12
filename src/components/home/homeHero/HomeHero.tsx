@@ -17,7 +17,7 @@ const SLIDES: Slide[] = [
   {
     src: "/images/hero/anniversary.jpeg",
     alt: "anniversary",
-    objectPosition: "center 30%"
+    objectPosition: "center 30%",
   },
   {
     src: "/images/hero/hero-carusel-3.jpeg",
@@ -32,7 +32,7 @@ const SLIDES: Slide[] = [
   {
     src: "/images/hero/hero-carusel-2.jpeg",
     alt: "team",
-    objectPosition: "center 28%"
+    objectPosition: "center 28%",
   },
   {
     src: "/images/hero/hero-kart.jpeg",
@@ -136,6 +136,7 @@ export default function HomeHero() {
       <div className={styles.heroMedia} aria-hidden>
         <div className={styles.carousel}>
           {SLIDES.map((s, idx) => {
+            const isFirst = idx === 0;
             const isActive = idx === active;
             return (
               <div
@@ -147,9 +148,9 @@ export default function HomeHero() {
                   src={s.src}
                   alt={s.alt ?? ""}
                   fill
-                  priority={idx === active}
-                  loading={idx === active ? "eager" : "lazy"}
-                  fetchPriority={idx === active ? "high" : "auto"}
+                  priority={isFirst}
+                  loading={isFirst ? "eager" : "lazy"}
+                  fetchPriority={isFirst ? "high" : "auto"}
                   sizes="100vw"
                   style={{ objectPosition: s.objectPosition ?? "center" }}
                 />
