@@ -111,7 +111,6 @@ export default function Header() {
                 src="/images/pkt_logo.svg"
                 alt="PKT Swiss Kart Team"
                 fill
-                priority
                 style={{
                   objectFit: "contain",
                   filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))",
@@ -271,7 +270,6 @@ export default function Header() {
                   src="/images/pkt_logo.svg"
                   alt="PKT Swiss Kart Team"
                   fill
-                  priority
                   style={{
                     objectFit: "contain",
                     filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.55))",
