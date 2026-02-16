@@ -105,7 +105,7 @@ export default function Header() {
                 position: "relative",
                 width: { xs: 140, md: 220 },
                 height: { xs: 44, md: 80 },
-                backgroundColor: "white",
+                paddingY: "3rem",
               }}
             >
               <Image
