@@ -174,8 +174,6 @@ export default function HomeHero() {
         )}
       </div>
 
-      <div className={styles.heroOverlay} aria-hidden />
-
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.heroTitle}>{t("title")}</h1>
