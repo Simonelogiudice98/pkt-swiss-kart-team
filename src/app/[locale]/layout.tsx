@@ -8,6 +8,7 @@ import Providers from "@/components/Providers";
 
 import { Cambo } from "next/font/google";
 import CookieNotice from "@/components/site/cookieNotice/CookieNotice";
+import type { Metadata } from "next";
 
 const cambo = Cambo({
   weight: ["400"],
@@ -19,6 +20,11 @@ const cambo = Cambo({
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const metadata: Metadata = {
+  title: "PKT Swiss Kart Team",
+  description: "Sito ufficiale del team di karting PKT",
+};
 
 export default async function LocaleLayout({
   children,

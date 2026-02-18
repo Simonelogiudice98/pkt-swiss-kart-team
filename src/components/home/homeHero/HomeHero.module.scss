@@ -38,17 +38,6 @@
   filter: saturate(1.05) contrast(1.05);
 }
 
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(900px 600px at 18% 30%, rgba(11, 42, 111, 0.45), transparent 62%),
-    radial-gradient(800px 520px at 72% 35%, rgba(0,0,0,0.22), transparent 62%),
-    linear-gradient(115deg, rgba(10,12,16,0.76) 0%, rgba(10,12,16,0.42) 50%, rgba(10,12,16,0.64) 100%),
-    radial-gradient(700px 260px at 36% 62%, rgba(255,210,0,0.10), transparent 65%);
-}
-
 .container {
   position: relative;
   z-index: 2;
@@ -129,8 +118,13 @@
     .heroMedia { height: 42svh; }
   }
 
-  .heroImg {
-    object-position: center 60%;
+  .firstSlide {
+    background: #fff;
+  }
+
+  .firstSlide .heroImg {
+    object-fit: contain;
+    object-position: center;
   }
 
   .container {

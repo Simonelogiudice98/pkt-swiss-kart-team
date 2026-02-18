@@ -73,7 +73,6 @@ export default function HomeHero() {
     deadlineRef.current = Date.now() + AUTOPLAY_MS;
 
     timerRef.current = window.setTimeout(() => {
-      // recupera eventuale ritardo (background tab, throttling, ecc.)
       const now = Date.now();
       const overdue = Math.max(0, now - deadlineRef.current);
       const skips = Math.floor(overdue / AUTOPLAY_MS);
@@ -92,7 +91,6 @@ export default function HomeHero() {
       const len = SLIDES.length;
       const safe = ((idx % len) + len) % len;
       setActive(safe);
-      // resetta il countdown dopo un cambio manuale
       scheduleNext();
     },
     [scheduleNext],
@@ -138,10 +136,13 @@ export default function HomeHero() {
           {SLIDES.map((s, idx) => {
             const isFirst = idx === 0;
             const isActive = idx === active;
+
             return (
               <div
                 key={s.src}
-                className={`${styles.slide} ${isActive ? styles.slideActive : ""}`}
+                className={`${styles.slide} ${isFirst ? styles.firstSlide : ""} ${
+                  isActive ? styles.slideActive : ""
+                }`}
               >
                 <Image
                   className={styles.heroImg}
@@ -183,10 +184,7 @@ export default function HomeHero() {
             <Link className={styles.primaryBtn} href={`/${locale}/servizi`}>
               {t("ctaServices")}
             </Link>
-            <Link
-              className={styles.secondaryBtn}
-              href={`/${locale}/piloti-gare`}
-            >
+            <Link className={styles.secondaryBtn} href={`/${locale}/piloti-gare`}>
               {t("ctaDriversRaces")}
             </Link>
           </div>
