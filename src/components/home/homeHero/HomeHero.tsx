@@ -184,7 +184,10 @@ export default function HomeHero() {
             <Link className={styles.primaryBtn} href={`/${locale}/servizi`}>
               {t("ctaServices")}
             </Link>
-            <Link className={styles.secondaryBtn} href={`/${locale}/piloti-gare`}>
+            <Link
+              className={styles.secondaryBtn}
+              href={`/${locale}/piloti-gare`}
+            >
               {t("ctaDriversRaces")}
             </Link>
           </div>
