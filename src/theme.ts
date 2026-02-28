@@ -9,7 +9,7 @@ export const theme = createTheme({
     primary: { main: "#0b2a6f" },
     secondary: { main: "#ffd200" },
     error: { main: "#e53935" },
-    background: { default: "#0a0c10", paper: "rgba(10, 12, 16, 0.92)" },
+    background: { default: "#0d1b2a", paper: "rgba(13, 27, 42, 0.92)" },
   },
   shape: { borderRadius: 14 },
   typography: {

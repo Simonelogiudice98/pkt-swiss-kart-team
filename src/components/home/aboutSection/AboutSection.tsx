@@ -64,7 +64,7 @@ export default function AboutSection() {
               <CustomCarousel
                 images={slides}
                 captionVariant="overlay"
-                fit="cover" // oppure "contain" se vuoi zero taglio
+                fit="cover"
                 sizes="(max-width: 900px) 92vw, 520px"
                 labels={{
                   prev: t("prev"),
