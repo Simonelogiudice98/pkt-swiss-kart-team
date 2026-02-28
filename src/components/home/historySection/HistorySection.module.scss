@@ -2,8 +2,7 @@
   position: relative;
   padding: 72px 0;
   overflow-x: clip;
-  background: linear-gradient(180deg, rgba(10, 12, 16, 0.96), rgba(10, 12, 16, 0.99));
-
+  
   @supports not (overflow-x: clip) {
     overflow-x: hidden;
   }
