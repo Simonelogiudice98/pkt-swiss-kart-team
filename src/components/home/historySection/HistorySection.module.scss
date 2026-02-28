@@ -2,6 +2,7 @@
   position: relative;
   padding: 72px 0;
   overflow-x: clip;
+  background: linear-gradient(180deg, rgba(10, 12, 16, 0.96), rgba(10, 12, 16, 0.99));
 
   @supports not (overflow-x: clip) {
     overflow-x: hidden;
@@ -101,8 +102,8 @@
 }
 
 .dot {
-  background-color: rgba(255, 210, 0, 0.92);
-  box-shadow: 0 0 0 6px rgba(255, 210, 0, 0.08);
+  background-color: rgba(255, 210, 0, 0.92) !important;
+  box-shadow: 0 0 0 6px rgba(255, 210, 0, 0.08) !important;
   margin: 0;
   margin-top: 8.8px;
   width: 34px;
@@ -112,7 +113,7 @@
 }
 
 .connector {
-  background-color: rgba(255, 210, 0, 0.18);
+  background-color: rgba(255, 210, 0, 0.18) !important;
   width: 2px;
   border-radius: 999px;
 }
