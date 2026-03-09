@@ -158,11 +158,14 @@
 }
 
 .poster {
-  height: 220px;
-  background-size: cover;
-  background-position: center;
-  filter: saturate(1.05) contrast(1.05);
   position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.posterImg {
+  display: block;
+  filter: saturate(1.05) contrast(1.05);
 }
 
 .poster::after {
