@@ -90,7 +90,6 @@ export default function Header() {
             width: "100%",
             px: { xs: 2, md: 3 },
             minHeight: { xs: 64, md: 72 },
-
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -137,7 +136,6 @@ export default function Header() {
               >
                 <InstagramIcon fontSize="small" />
               </a>
-
               <a
                 className={`${s.socialBtn} ${s.fb}`}
                 href={socials.facebook}
@@ -148,7 +146,6 @@ export default function Header() {
               >
                 <FacebookIcon fontSize="small" />
               </a>
-
               <a
                 className={`${s.socialBtn} ${s.tk}`}
                 href={socials.tiktok}
@@ -159,7 +156,6 @@ export default function Header() {
               >
                 <MusicNoteIcon fontSize="small" />
               </a>
-
               <a
                 className={`${s.socialBtn} ${s.wa}`}
                 href={socials.whatsapp}
@@ -280,35 +276,37 @@ export default function Header() {
             </Link>
 
             <Stack direction="row" spacing={1} alignItems="center">
-              <div className={s.socialRow} aria-label="Social">
-                <a
-                  className={`${s.socialBtn} ${s.ig}`}
-                  href={socials.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon fontSize="small" />
-                </a>
-                <a
-                  className={`${s.socialBtn} ${s.fb}`}
-                  href={socials.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Facebook"
-                >
-                  <FacebookIcon fontSize="small" />
-                </a>
-                <a
-                  className={`${s.socialBtn} ${s.tk}`}
-                  href={socials.tiktok}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="TikTok"
-                >
-                  <MusicNoteIcon fontSize="small" />
-                </a>
-              </div>
+              <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+                <div className={s.socialRow} aria-label="Social">
+                  <a
+                    className={`${s.socialBtn} ${s.ig}`}
+                    href={socials.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram"
+                  >
+                    <InstagramIcon fontSize="small" />
+                  </a>
+                  <a
+                    className={`${s.socialBtn} ${s.fb}`}
+                    href={socials.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Facebook"
+                  >
+                    <FacebookIcon fontSize="small" />
+                  </a>
+                  <a
+                    className={`${s.socialBtn} ${s.tk}`}
+                    href={socials.tiktok}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="TikTok"
+                  >
+                    <MusicNoteIcon fontSize="small" />
+                  </a>
+                </div>
+              </Box>
 
               <IconButton
                 aria-label="Close menu"
