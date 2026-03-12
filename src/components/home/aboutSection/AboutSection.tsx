@@ -51,7 +51,6 @@ export default function AboutSection() {
             <div className={styles.overline}>{t("kicker")}</div>
             <h2 className={styles.title}>{t("title")}</h2>
 
-            {/* ↓ Due paragrafi separati invece di uno solo lungo */}
             <p className={styles.lead}>{t("lead1")}</p>
             <p className={styles.lead}>{t("lead2")}</p>
 

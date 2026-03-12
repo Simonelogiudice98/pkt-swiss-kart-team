@@ -75,7 +75,7 @@ export default function HistorySection() {
         <Reveal>
           <Stack className={styles.header}>
             <Typography className={styles.kicker}>{t("kicker")}</Typography>
-            <Typography variant="h3" className={styles.title}>{t("title")}</Typography>
+            <h2 className={styles.title}>{t("title")}</h2>
             <Typography className={styles.lead}>{t("lead")}</Typography>
           </Stack>
         </Reveal>
