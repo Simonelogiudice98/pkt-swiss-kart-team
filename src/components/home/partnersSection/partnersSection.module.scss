@@ -59,14 +59,13 @@
   text-decoration: none;
   border-radius: 14px;
   overflow: hidden;
-  border: 2px solid #ffd200;
-  background: rgba(255, 255, 255, 0.06);
+    background: rgba(240, 245, 255, 0.92); /* bianco con tinta fredda/blu */
+  border: 2px solid rgba(255, 210, 0, 0.75);
   backdrop-filter: blur(4px);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 
   height: 118px;
-
   transform: translateY(10px);
   opacity: 0;
   animation: partnerIn 600ms ease forwards;
@@ -80,8 +79,8 @@
   box-shadow:
     0 18px 46px rgba(0, 0, 0, 0.45),
     inset 0 0 0 1px rgba(255, 255, 255, 0.10);
-
-  background: rgba(255, 255, 255, 0.09);
+   background: rgba(255, 255, 255, 0.98);
+  border-color: #ffd200;
 }
 
 .partnerCard:nth-child(1) { animation-delay: 60ms; }
@@ -177,6 +176,7 @@
   transform: scale(1);
   transition: transform 260ms ease;
   padding: 6px 10px;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
 }
 
 .partnerCard:hover .partnerLogoImg {
