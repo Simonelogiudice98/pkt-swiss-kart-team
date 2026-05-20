@@ -20,6 +20,11 @@ const SLIDES: Slide[] = [
     objectPosition: "center 30%",
   },
   {
+    src: "/images/hero/hero-carousel-5.jpeg",
+    alt: "team trofei",
+    objectPosition: "center 30%",
+  },
+  {
     src: "/images/hero/hero-carusel-4.jpeg",
     alt: "anniversary",
     objectPosition: "center 30%",

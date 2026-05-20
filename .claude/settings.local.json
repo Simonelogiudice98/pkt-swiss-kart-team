@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-String -Pattern \"\\\\.\\(jpg|jpeg|png|webp\\)\" -i)"
+    ]
+  }
+}
